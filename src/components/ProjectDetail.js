@@ -5,6 +5,7 @@ import About from './About';
 import Tools from './Tools';
 import Projects from './Projects';
 import Footer from './Footer';
+import Bubble from './Bubble';
 
 class Home extends React.Component {
   constructor(props) {
@@ -13,7 +14,8 @@ class Home extends React.Component {
   render() {
     return (
       <div className='App'>
-        Hello from project: {this.props.match.params.name}
+        <h1>Hello from project: {this.props.match.params.name}</h1>
+        <Bubble />
       </div>
     );
   }

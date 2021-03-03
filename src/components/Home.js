@@ -5,10 +5,18 @@ import About from './About';
 import Tools from './Tools';
 import Projects from './Projects';
 import Footer from './Footer';
+import Bubble from './Bubble';
+import '../main.scss';
 
 class Home extends React.Component {
   render() {
-    return <div className='App'>Hello from Home</div>;
+    return (
+      <div className='App'>
+        <Nav />
+        <Landing />
+        <Bubble />
+      </div>
+    );
   }
 }
 
