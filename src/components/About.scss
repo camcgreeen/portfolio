@@ -5,4 +5,15 @@
   height: 100vh;
   background-color: black;
   color: white;
+  display: flex;
+  align-items: center;
+
+  &__me {
+    font-size: 3rem;
+    line-height: 140%;
+    &__special {
+      background: linear-gradient(270deg, #7245f9 64.63%, #4577f9 100%);
+      padding-right: 6px; // needed otherwise letter-spacing causes cut-off
+    }
+  }
 }

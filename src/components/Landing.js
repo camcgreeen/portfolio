@@ -33,7 +33,10 @@ class Landing extends React.Component {
                   {'web applications.'}
                 </span>
               </h1>
-              <div className='landing__container__row__cta'>
+              <div
+                className='landing__container__row__cta'
+                onClick={this.scroll}
+              >
                 <svg
                   // className='landing__cta'
                   width='65'
@@ -61,6 +64,12 @@ class Landing extends React.Component {
       </div>
     );
   }
+  scroll = () => {
+    const about = document.querySelector('.about');
+    about.scrollIntoView({
+      behavior: 'smooth',
+    });
+  };
 }
 
 export default Landing;
