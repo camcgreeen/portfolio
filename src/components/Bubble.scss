@@ -1,0 +1,31 @@
+@import '../utilities/variables.scss';
+
+.bubble {
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: $color-primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  a {
+    height: 30px;
+  }
+  svg {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s ease-in-out;
+  }
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.25, 1.25);
+    svg {
+      // transform: scale(calc(1 / 1.25), calc(1 / 1.25));
+      transform: scale(0.8, 0.8);
+    }
+  }
+}
