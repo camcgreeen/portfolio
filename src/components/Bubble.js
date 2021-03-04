@@ -1,12 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Bubble.scss';
 
 class Bubble extends React.Component {
   render() {
     return (
-      <div className='bubble'>
-        <Link to='/contact'>
+      <a href='mailto:hello@camgreen.works' style={{ display: 'block' }}>
+        <div className='bubble'>
           <svg
             viewBox='0 0 30 30'
             fill='none'
@@ -17,8 +16,8 @@ class Bubble extends React.Component {
               fill='white'
             />
           </svg>
-        </Link>
-      </div>
+        </div>
+      </a>
     );
   }
 }

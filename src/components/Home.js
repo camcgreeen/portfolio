@@ -32,6 +32,7 @@ class Home extends React.Component {
               </h2>
             </div>
             <Projects />
+            <Footer />
             <Bubble />
           </>
         ) : (

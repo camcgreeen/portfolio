@@ -62,6 +62,26 @@ p {
   letter-spacing: $letter_spacing;
 }
 
+h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  span {
+    background-color: $color-accent;
+    background: linear-gradient(
+      90deg,
+      #000000 0%,
+      #3d2585 16.48%,
+      #7245f9 100%
+    );
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    padding-right: 5px; // needed due to letter-spacing
+  }
+}
+
 h2 {
   font-size: 3rem;
   font-weight: 400;

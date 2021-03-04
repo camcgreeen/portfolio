@@ -1,0 +1,10 @@
+@import '../utilities/variables.scss';
+
+.footer {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+}
