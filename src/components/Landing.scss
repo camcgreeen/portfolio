@@ -23,7 +23,7 @@
     // top: 50%;
     transform: translateY(-50%);
     &__name {
-      font-weight: 300;
+      // font-weight: 300;
       &__cam {
         position: relative;
         svg {
@@ -44,7 +44,7 @@
         font-size: 4rem;
         line-height: 90px;
         &__dynamic {
-          background-color: #7245f9;
+          background-color: $color-accent;
           background: linear-gradient(
             90deg,
             #000000 0%,

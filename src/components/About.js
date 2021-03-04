@@ -11,7 +11,7 @@ class Home extends React.Component {
             <p>
               Hi! I’m Cam, a{' '}
               <span className='about__me__special'>front-end developer</span>{' '}
-              based in the south of England. 👋
+              based in sunny England. 👋
             </p>
             <br />
             <p>
