@@ -4,6 +4,15 @@ import "./Footer.scss";
 
 class Footer extends React.Component {
   render() {
+    {
+      /*
+        TO DO:
+          Add download link for CV
+          Make links hoverable
+          Add LinkedIn page
+          Swap out 100vh
+      */
+    }
     return (
       <div className="footer">
         <div className="wrapper">
@@ -20,7 +29,17 @@ class Footer extends React.Component {
               // ADD A TAGS HERE AND CV DOWNLOAD LINK
             }
             <ul className="footer__container__links">
-              <li>LinkedIn</li>
+              <a
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none", display: "inline" }}
+              >
+                <li>LinkedIn</li>
+              </a>
+              {
+                // add download link for CV
+              }
               <li>CV</li>
             </ul>
             <a href="mailto:hello@camgreen.works">
