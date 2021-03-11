@@ -6,6 +6,7 @@ $bar-spacing: 5px;
 
 .nav {
   position: fixed;
+  // background: $color-primary;
   top: 0;
   left: 0;
   width: calc(100% - 120px);
@@ -14,8 +15,11 @@ $bar-spacing: 5px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  svg path {
-    // mix-blend-mode: difference;
+  svg {
+    path {
+      fill: $color-primary;
+      mix-blend-mode: difference;
+    }
   }
   a {
     height: 24px;
