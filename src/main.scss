@@ -38,20 +38,20 @@ html {
   font-size: 24px;
 }
 
-body {
-  overflow-y: overlay;
-  background-color: $color-bg;
-  &::-webkit-scrollbar {
-    width: 8px;
-  }
-  &::-webkit-scrollbar-track {
-    background: none;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: #333;
-    border-radius: 20px;
-  }
-}
+// body {
+//   overflow-y: overlay;
+//   background-color: $color-bg;
+//   &::-webkit-scrollbar {
+//     width: 8px;
+//   }
+//   &::-webkit-scrollbar-track {
+//     background: none;
+//   }
+//   &::-webkit-scrollbar-thumb {
+//     background-color: #333;
+//     border-radius: 20px;
+//   }
+// }
 
 h1,
 h2,

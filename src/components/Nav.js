@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LocomotiveScroll from 'locomotive-scroll';
 import '../main.scss';
 import './Nav.scss';
 
@@ -12,7 +13,7 @@ class Nav extends React.Component {
   }
   render() {
     return (
-      <nav className='nav'>
+      <nav className='nav' data-scroll-sticky>
         <Link to='/'>
           <svg
             width='24'

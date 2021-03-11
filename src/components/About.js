@@ -1,6 +1,10 @@
 import React from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import '../main.scss';
 import './About.scss';
+
+gsap.registerPlugin(ScrollTrigger);
 
 class Home extends React.Component {
   render() {
@@ -27,6 +31,18 @@ class Home extends React.Component {
       </div>
     );
   }
+  componentDidMount = () => {
+    let reveal = gsap.timeline({ scrollTrigger: { trigger: '.about__me' } });
+    reveal.from(
+      '.about__me',
+      {
+        duration: 2,
+        opacity: 0,
+        ease: 'power4.out',
+      },
+      '+=0'
+    );
+  };
 }
 
 export default Home;
