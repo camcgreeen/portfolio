@@ -11,7 +11,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className='wrapper'>
-        <div className='about'>
+        <div className='about' id='about'>
           <h2 className='about__h2'>About me.</h2>
           <div className='about__content'>
             <div className='about__content__me'>
@@ -27,7 +27,7 @@ class Home extends React.Component {
                 I love to make things on the internet, like applications and
                 websites. I build products that provide{' '}
                 <span className='about__contact__me__special'>
-                  fast, responsive and dynamic
+                  fast and dynamic
                 </span>{' '}
                 experiences. 😀
               </p>

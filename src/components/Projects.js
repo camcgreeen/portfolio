@@ -15,47 +15,27 @@ class Tools extends React.Component {
                 <div className='projects__screen__hero__box'></div>
               </Link>
             </div>
-            {/* <div
-              className='projects__screen__container'
-              style={{ float: 'right' }}
-            >
-              <div className='projects__screen__container__links'></div>
-            </div> */}
-            <div
-              className='projects__screen__container'
-              // style={{ float: 'right' }}
-              style={{ justifyContent: 'flex-end' }}
-            >
-              <div
-                className='projects__screen__container__links'
-                style={{ marginRight: 80 }}
-              >
+            <div className='projects__screen__container'>
+              <div className='projects__screen__container__details'>
+                <h4>Chatbox</h4>
+                <h3>
+                  Real-time <br /> <span>chat application.</span>
+                </h3>
+              </div>
+              <div className='projects__screen__container__links'>
                 <Link to='/projects/chatbox'>
-                  <svg
-                    className='projects__screen__container__links__arrow'
-                    width='100'
-                    height='100'
-                    viewBox='0 0 100 100'
-                    fill='none'
-                    xmlns='http://www.w3.org/2000/svg'
-                  >
-                    <circle cx='50' cy='50' r='49.5' stroke='black' />
-                    <path
-                      d='M41 58.5L58.5 41M58.5 41V53.5M58.5 41H46'
-                      stroke='black'
-                      stroke-width='2'
-                    />
-                  </svg>
+                  <button className='btn'>View project.</button>
                 </Link>
                 <a
                   href='https://github.com/camcgreen/chatbox'
                   target='_blank'
                   rel='noopener noreferrer'
+                  style={{ height: 45 }}
                 >
                   <svg
                     className='projects__screen__container__links__github'
-                    width='48'
-                    height='48'
+                    width='45'
+                    height='45'
                     viewBox='0 0 48 48'
                     fill='none'
                     xmlns='http://www.w3.org/2000/svg'
@@ -66,15 +46,6 @@ class Tools extends React.Component {
                     />
                   </svg>
                 </a>
-              </div>
-              <div className='projects__screen__container__details'>
-                <h4>Chatbox</h4>
-                <h3>
-                  Real-time <br /> <span>chat application.</span>
-                </h3>
-                <h4 className='projects__screen__container__details__tags'>
-                  react, firebase
-                </h4>
               </div>
             </div>
           </div>
@@ -102,27 +73,10 @@ class Tools extends React.Component {
                 <h3>
                   Remote job <br /> <span>search platform.</span>
                 </h3>
-                <h4 className='projects__screen__container__details__tags'>
-                  react, firebase, github jobs api
-                </h4>
               </div>
               <div className='projects__screen__container__links'>
                 <Link to='/projects/jobstasy'>
-                  <svg
-                    className='projects__screen__container__links__arrow'
-                    width='100'
-                    height='100'
-                    viewBox='0 0 100 100'
-                    fill='none'
-                    xmlns='http://www.w3.org/2000/svg'
-                  >
-                    <circle cx='50' cy='50' r='49.5' stroke='black' />
-                    <path
-                      d='M41 58.5L58.5 41M58.5 41V53.5M58.5 41H46'
-                      stroke='black'
-                      stroke-width='2'
-                    />
-                  </svg>
+                  <button className='btn'>View project.</button>
                 </Link>
                 <a
                   href='https://github.com/camcgreen/jobstasy'

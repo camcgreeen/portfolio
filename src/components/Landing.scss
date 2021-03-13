@@ -28,7 +28,7 @@
       margin-bottom: 100px;
     }
     &__description {
-      margin-bottom: 20px;
+      margin-bottom: 40px;
     }
   }
   &__logo {
@@ -38,12 +38,12 @@
     // overflow: hidden;
     &:hover {
       .circle1 {
-        background-color: lighten(#090f29, 2.5%);
+        background-color: lighten($color-primary, 2.5%);
       }
     }
 
     &__circle1 {
-      background-color: #090f29;
+      background-color: $color-primary;
       transition: background-color 0.5s ease-in-out;
       width: 100%;
       height: 100%;
@@ -63,7 +63,7 @@
     }
 
     &__circle2 {
-      background: #f3f3f3;
+      background: $color-bg;
       width: 50%;
       height: 50%;
       border-radius: 50%;
@@ -78,7 +78,7 @@
     }
 
     &__rectangle {
-      background: #f3f3f3;
+      background: $color-bg;
       width: 100%;
       height: 20%;
       position: absolute;
