@@ -35,3 +35,22 @@
     max-width: 400px;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .card {
+    padding: 10px;
+    width: 90%;
+    margin-top: 15px;
+    &__head {
+      &__img {
+        width: 40px;
+      }
+      &__name {
+        margin-bottom: 20px;
+      }
+    }
+    &__description {
+      max-width: 100%;
+    }
+  }
+}

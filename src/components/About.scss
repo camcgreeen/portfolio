@@ -13,7 +13,7 @@
     // justify-content: space-between;
     align-items: center;
     &__me {
-      font-size: 1.5rem;
+      font-size: 1rem;
       line-height: 140%;
       max-width: 50%;
       align-self: flex-start;
@@ -30,6 +30,36 @@
       // height: 60%;
       height: 100%;
       width: 300px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .about {
+    &__content {
+      flex-direction: column;
+      align-items: flex-start;
+      &__me {
+        max-width: 100%;
+        margin-right: 0;
+      }
+      img {
+        margin-top: 100px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .about {
+    &__content {
+      &__me {
+        // text-align: center;
+      }
+    }
+    img {
+      width: 200px;
+      margin-top: 40px;
     }
   }
 }

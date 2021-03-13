@@ -16,11 +16,9 @@ class Chatbox extends React.Component {
       <div className='project-detail'>
         <Nav />
         <div className='wrapper'>
-          <h4 className='project-detail__breadcrumb'>
-            Projects / <span>Chatbox</span>
-          </h4>
+          <h4 className='project-detail__breadcrumb'>Chatbox</h4>
           <h1>
-            Real-time <br /> <span>chat application.</span>
+            Real-time <br /> chat application.
           </h1>
         </div>
         <img
@@ -29,35 +27,31 @@ class Chatbox extends React.Component {
           alt='Chatbox chat application.'
         />
         <div className='wrapper'>
-          <h2 className='project-detail__h2'>
-            Chatbox<span>.</span>
+          <h2 className='project-detail__h2' style={{ marginTop: 300 }}>
+            The project.
           </h2>
           <div className='project-detail__details'>
-            <h4 className='project-detail__details__title'>
-              Technologies used
-            </h4>
-            <h4>React, Firebase, Git & Figma</h4>
+            <h4 className='project-detail__details__title'>Tools used</h4>
+            <h4>React, Firebase, Git & Figma.</h4>
             <br />
-            <h4 className='project-detail__details__title'>Synopsis</h4>
+            <h4 className='project-detail__details__title'>Summary</h4>
             <h4>
               Chatbox is a real time chat application that can connect you to
               anyone in the world, complete with online status messages, typing
-              indicators, read receipts and activity timers
+              indicators, read receipts and activity timers.
             </h4>
             <div className='project-detail__details__buttons'>
-              <button className='project-detail__details__buttons__launch'>
-                Launch project
-              </button>
+              <button className='btn'>Launch project.</button>
               <a
                 href='https://github.com/camcgreen/chatbox'
                 target='_blank'
                 rel='noopener noreferrer'
-                style={{ width: 48, height: 48 }}
+                style={{ width: 45, height: 45, marginLeft: 40 }}
               >
                 <svg
                   className='project-detail__details__buttons__github'
-                  width='48'
-                  height='48'
+                  width='45'
+                  height='45'
                   viewBox='0 0 48 48'
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
@@ -75,9 +69,7 @@ class Chatbox extends React.Component {
           }
           <div className='greybox'></div>
           <div className='project-detail__goal'>
-            <h2 className='project-detail__h2'>
-              The goal<span>.</span>
-            </h2>
+            <h2 className='project-detail__h2'>The goal.</h2>
             <div className='project-detail__goal__detail'>
               <p>
                 Chatbox is a real-time chat application that can connect you to
@@ -95,7 +87,7 @@ class Chatbox extends React.Component {
         <div className='wrapper'>
           <div className='project-detail__build'>
             <h2 className='project-detail__h2'>
-              How I <br /> built it<span>.</span>
+              How I <br /> built it.
             </h2>
             <div className='project-detail__build__detail'>
               <p>
@@ -110,9 +102,7 @@ class Chatbox extends React.Component {
           }
           <div className='greybox'></div>
           <div className='project-detail__lessons'>
-            <h2 className='project-detail__h2'>
-              Lessons learned<span>.</span>
-            </h2>
+            <h2 className='project-detail__h2'>Lessons learned.</h2>
             <div className='project-detail__lessons__detail'>
               <p>
                 Chatbox is a real-time chat application that can connect you to
@@ -121,10 +111,18 @@ class Chatbox extends React.Component {
               </p>
             </div>
           </div>
-          <Link to='/'>
-            <button className='project-detail__back'>Back.</button>
-          </Link>
+          <div className='project-detail__buttons'>
+            <Link to='/'>
+              <button className='btn'>Go home.</button>
+            </Link>
+            <Link to='/projects/jobstasy'>
+              <button className='btn' style={{ marginLeft: 20 }}>
+                Next project.
+              </button>
+            </Link>
+          </div>
         </div>
+        <Footer />
         <Bubble />
       </div>
     );

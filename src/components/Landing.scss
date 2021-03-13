@@ -14,7 +14,7 @@
   &__bg {
     width: 50%;
     height: 55vh;
-    // background-color: white;
+    background-color: white;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -89,6 +89,17 @@
       // transition: all 0.2s ease-out;
       transition: all 0.5s cubic-bezier(0, 0, 0.36, 1.47);
       // transition: transform 0.1s ease-in-out;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .landing {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    &__logo {
+      display: none;
     }
   }
 }

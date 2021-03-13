@@ -6,14 +6,17 @@ import Home from './components/Home';
 // import ProjectDetail from './components/ProjectDetail';
 import Chatbox from './components/Chatbox';
 import Jobstasy from './components/Jobstasy';
+import ScrollToTop from './components/ScrollToTop';
 import reportWebVitals from './reportWebVitals';
 
 const routing = (
   <BrowserRouter>
     <div id='routing-container'>
+      {/* <ScrollToTop> */}
       <Route path='/' exact component={Home}></Route>
       <Route path='/projects/chatbox' exact component={Chatbox}></Route>
       <Route path='/projects/jobstasy' exact component={Jobstasy}></Route>
+      {/* </ScrollToTop> */}
     </div>
   </BrowserRouter>
 );

@@ -7,7 +7,7 @@ import './About.scss';
 
 gsap.registerPlugin(ScrollTrigger);
 
-class Home extends React.Component {
+class About extends React.Component {
   render() {
     return (
       <div className='wrapper'>
@@ -16,14 +16,6 @@ class Home extends React.Component {
           <div className='about__content'>
             <div className='about__content__me'>
               <p className='parallax__p'>
-                Hi! I’m Cam, a{' '}
-                <span className='about__content__me__special'>
-                  front-end developer
-                </span>{' '}
-                based in sunny England. 👋🏼
-              </p>
-              <br />
-              <p className='parallax__p'>
                 I love to make things on the internet, like applications and
                 websites. I build products that provide{' '}
                 <span className='about__contact__me__special'>
@@ -31,6 +23,19 @@ class Home extends React.Component {
                 </span>{' '}
                 experiences. 😀
               </p>
+              <br />
+              <p className='parallax__p'>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Pellentesque semper enim a vestibulum aliquam. Praesent
+                vulputate aliquam dolor, eu semper nulla venenatis id. Etiam
+                elementum, felis in ultricies malesuada, nisi metus finibus
+                lacus, eu ultrices augue nibh id mi.
+              </p>
+              <br />
+              {/* <p className='parallax__p'>
+                Pellentesque scelerisque pulvinar ante in egestas. Donec eros
+                neque, vestibulum eu diam eget, elementum hendrerit erat.
+              </p> */}
             </div>
             <img
               className='about__content__img'
@@ -96,4 +101,4 @@ class Home extends React.Component {
   };
 }
 
-export default Home;
+export default About;

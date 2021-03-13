@@ -15,8 +15,8 @@ class Landing extends React.Component {
               Creative developer <br /> & designer.
             </h1>
             <h4 className='landing__content__description'>
-              Hi! I'm Cam, a passionate front-end <br /> developer based in the
-              UK.
+              Hi! I'm Cam, a positive front-end <br /> developer based in sunny
+              England. 👋🏼
             </h4>
             <button className='btn'>Explore.</button>
           </div>
@@ -53,10 +53,13 @@ class Landing extends React.Component {
     //   { yPercent: 0 },
     //   { yPercent: 50, ease: 'power2.out' }
     // );
-    window.onbeforeunload = function () {
-      window.scrollTo(0, 0);
-    };
-    this.jellyLogo(60, '800px');
+    // window.onbeforeunload = function () {
+    //   window.scrollTo(0, 0);
+    // };
+    if (window.scrollY < 1000) {
+      setTimeout(() => this.jellyLogo(60, '800px'), 500);
+    }
+    // this.jellyLogo(60, '800px');
   };
   jellyLogo = (constrain, perspective) => {
     const circle1 = document.querySelector('.landing__logo__circle1');
