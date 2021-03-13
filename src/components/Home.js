@@ -28,7 +28,7 @@ class Home extends React.Component {
             <Tools />
             <div className='projects-intro'>
               <h2>
-                Some things <br /> that I've <br /> worked on<span>.</span>
+                Some things <br /> that I've <br /> worked on.
               </h2>
             </div>
             <Projects />

@@ -1,37 +1,37 @@
 @import '../utilities/variables.scss';
 
 .card {
-  background-color: white;
+  background-color: $color-bg;
   padding: 80px 50px;
   margin-right: 100px;
   margin-top: 60px;
-  border-radius: $border-radius;
   box-shadow: -4px 4px 20px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
   position: relative;
-  transition: box-shadow 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
   &:hover {
     box-shadow: -4px 16px 35px rgba(0, 0, 0, 0.25);
+    background-color: white;
   }
   &__head {
     &__img {
+      width: 80px;
       margin-bottom: 10px;
       path {
-        fill: blue;
+        fill: $color-primary;
       }
     }
     &__name {
-      font-size: 1.25rem;
+      font-size: 1rem;
       margin-bottom: 80px;
     }
   }
   &__description {
-    font-size: 1rem;
+    font-size: 0.75rem;
     color: $color-secondary;
-    max-width: 550px;
+    max-width: 400px;
   }
 }

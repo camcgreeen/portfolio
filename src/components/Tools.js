@@ -36,7 +36,7 @@ class Tools extends React.Component {
       <div className='tools'>
         <div className='wrapper'>
           <h2 className='tools__h2'>
-            Tools of <br /> the trade<span>.</span>
+            Tools of <br /> the trade.
           </h2>
           {}
           <ul className='tools__grid'>

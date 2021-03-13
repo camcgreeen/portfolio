@@ -38,6 +38,11 @@ html {
   font-size: 24px;
 }
 
+body {
+  // scroll-behavior: smooth;
+  background-color: $color-bg;
+}
+
 // body {
 //   overflow-y: overlay;
 //   background-color: $color-bg;
@@ -65,22 +70,8 @@ p {
 
 h1 {
   font-size: 4rem;
-  font-weight: 700;
-  span {
-    background-color: $color-accent-1;
-    background: linear-gradient(
-      90deg,
-      #000000 0%,
-      #3d2585 16.48%,
-      #7245f9 100%
-    );
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-    padding-right: 5px; // needed due to letter-spacing
-  }
+  font-weight: 500;
+  line-height: 100%;
 }
 
 h2 {
@@ -118,4 +109,20 @@ h4 {
 .wrapper {
   width: 1500px;
   margin: 0 auto;
+}
+
+.btn {
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: solid $color-primary 1px;
+  background-color: $color-bg;
+  padding: 10px 40px 10px 40px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+  &:hover {
+    background-color: $color-primary;
+    color: $color-bg;
+    border: solid rgba(0, 0, 0, 0) 1px;
+  }
 }

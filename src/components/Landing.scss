@@ -3,4 +3,92 @@
 .landing {
   width: 100%;
   height: 100vh;
+  background-color: $color-bg;
+  display: flex;
+  flex-direction: row;
+  // justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  // background: orange;
+  &__bg {
+    width: 50%;
+    height: 55vh;
+    // background-color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__content {
+    // align-self: center;
+    z-index: 10;
+    margin-right: 120px;
+    &__title {
+      margin-bottom: 100px;
+    }
+    &__description {
+      margin-bottom: 20px;
+    }
+  }
+  &__logo {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    // overflow: hidden;
+    &:hover {
+      .circle1 {
+        background-color: lighten(#090f29, 2.5%);
+      }
+    }
+
+    &__circle1 {
+      background-color: #090f29;
+      transition: background-color 0.5s ease-in-out;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      // perspective: 400;
+      z-index: 1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      // transition: transform 0.1s ease-in-out;
+      // transition: all 0.1s ease-out;
+      transition: all 1s cubic-bezier(0, 0, 0.36, 1.47);
+      // transition-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53);
+      // transition-duration: 2.9s;
+      // transition: transform 2.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    &__circle2 {
+      background: #f3f3f3;
+      width: 50%;
+      height: 50%;
+      border-radius: 50%;
+      z-index: 2;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.25s cubic-bezier(0, 0, 0.36, 1.47);
+      // transition: transform 0.1s ease-in-out;
+      // transition: 0.2s;
+    }
+
+    &__rectangle {
+      background: #f3f3f3;
+      width: 100%;
+      height: 20%;
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      // transition: all 0.2s ease-out;
+      transition: all 0.5s cubic-bezier(0, 0, 0.36, 1.47);
+      // transition: transform 0.1s ease-in-out;
+    }
+  }
 }
