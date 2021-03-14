@@ -14,6 +14,11 @@ class About extends React.Component {
         <div className='about' id='about'>
           <h2 className='about__h2'>About me.</h2>
           <div className='about__content'>
+            <img
+              className='about__content__img'
+              src={Profile}
+              alt='profile picture'
+            />
             <div className='about__content__me'>
               <p className='parallax__p'>
                 I love to make things on the internet, like applications and
@@ -37,11 +42,6 @@ class About extends React.Component {
                 neque, vestibulum eu diam eget, elementum hendrerit erat.
               </p> */}
             </div>
-            <img
-              className='about__content__img'
-              src={Profile}
-              alt='profile picture'
-            />
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { SplitText } from 'gsap/SplitText';
 import '../main.scss';
 import './Landing.scss';
 
@@ -15,10 +16,17 @@ class Landing extends React.Component {
               Creative developer <br /> & designer.
             </h1>
             <h4 className='landing__content__description'>
-              Hi! I'm Cam, a positive front-end <br /> developer based in sunny
+              Hi! I'm Cam, a diligent front-end developer <br /> based in sunny
               England. 👋🏼
             </h4>
-            <button className='btn'>Explore.</button>
+            <div
+              class='btn main'
+              onClick={() => console.log('aaa nice button you got there')}
+            >
+              <p class='btn__text'>Explore.</p>
+              <div class='btn__bg-1'></div>
+              <div class='btn__bg-2'></div>
+            </div>
           </div>
           <div className='landing__logo'>
             <div className='landing__logo__circle1'></div>
@@ -36,28 +44,50 @@ class Landing extends React.Component {
     });
   };
   componentDidMount = () => {
-    // let tl = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: '.landing__content',
-    //     scrub: true,
-    //     // start: 'top top',
-    //     // end: 'bottom top',
-    //     // start: 'top top',
-    //     start: 'top top',
-    //     end: 'bottom top',
-    //     toggleActions: 'restart none none none',
-    //   },
-    // });
-    // tl.fromTo(
-    //   '.landing__content',
-    //   { yPercent: 0 },
-    //   { yPercent: 50, ease: 'power2.out' }
-    // );
-    // window.onbeforeunload = function () {
-    //   window.scrollTo(0, 0);
-    // };
+    let tl = gsap.timeline({});
+
+    new SplitText('.landing__content__title', {
+      type: 'lines',
+      linesClass: 'line-child',
+    });
+    new SplitText('.landing__content__title', {
+      type: 'lines',
+      linesClass: 'line-parent',
+    });
+    new SplitText('.landing__content__description', {
+      type: 'lines',
+      linesClass: 'line-child',
+    });
+    new SplitText('.landing__content__description', {
+      type: 'lines',
+      linesClass: 'line-parent',
+    });
+
+    tl.from(
+      '.line-child',
+      {
+        duration: 1.8,
+        y: 140,
+        opacity: 0,
+        ease: 'power4.out',
+        // delay: 1,
+        // skewY: 2,
+        // skewX: 1,
+        stagger: {
+          amount: 0.2,
+        },
+      },
+      '+=0'
+    )
+      .from('.main', { opacity: 0, duration: 2, ease: 'power4.out' }, '-=1')
+      .from(
+        '.landing__logo',
+        { opacity: 0, duration: 2, ease: 'power4.out' },
+        '-=1.5'
+      );
+
     if (window.scrollY < 1000) {
-      setTimeout(() => this.jellyLogo(60, '800px'), 500);
+      setTimeout(() => this.jellyLogo(60, '7000px'), 500);
     }
     // this.jellyLogo(60, '800px');
   };
@@ -72,7 +102,7 @@ class Landing extends React.Component {
       const rectangleBounds = rectangle.getBoundingClientRect();
       document.onmousemove = (e) => {
         if (window.scrollY < 1000) {
-          console.log('making jelly');
+          // console.log('making jelly');
           if (circle1 && circle2 && rectangle) {
             let rotateCircle1X =
               -(e.clientY - circle1Bounds.y - circle1Bounds.height / 2) /

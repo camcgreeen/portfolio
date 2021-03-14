@@ -9,9 +9,9 @@
   }
   &__content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     // justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     &__me {
       font-size: 1rem;
       line-height: 140%;
@@ -30,6 +30,7 @@
       // height: 60%;
       height: 100%;
       width: 300px;
+      margin-bottom: 100px;
     }
   }
 }
