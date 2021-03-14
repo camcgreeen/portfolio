@@ -5,7 +5,12 @@
   padding: 0px 7px 8px 0;
 }
 
+.anim-container {
+  overflow: hidden;
+}
+
 .landing {
+  // margin-top: 1000px;
   width: 100%;
   height: 100vh;
   background-color: $color-bg;

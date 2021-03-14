@@ -57,7 +57,7 @@ class About extends React.Component {
     //     // start: 'top top',
     //     start: 'top 20%',
     //     end: 'bottom top',
-    //     toggleActions: 'restart none none none',
+    // toggleActions: 'restart none none none',
     //   },
     // });
     // tl.fromTo(

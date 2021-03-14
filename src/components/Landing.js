@@ -28,10 +28,12 @@ class Landing extends React.Component {
               <div class='btn__bg-2'></div>
             </div>
           </div>
-          <div className='landing__logo'>
-            <div className='landing__logo__circle1'></div>
-            <div className='landing__logo__circle2'></div>
-            <div className='landing__logo__rectangle'></div>
+          <div className='anim-container'>
+            <div className='landing__logo'>
+              <div className='landing__logo__circle1'></div>
+              <div className='landing__logo__circle2'></div>
+              <div className='landing__logo__rectangle'></div>
+            </div>
           </div>
         </div>
       </div>
@@ -44,7 +46,12 @@ class Landing extends React.Component {
     });
   };
   componentDidMount = () => {
-    let tl = gsap.timeline({});
+    let tl = gsap.timeline({
+      trigger: '.landing',
+      start: 'center top',
+      end: 'bottom center',
+      toggleActions: 'play pause resume reset',
+    });
 
     new SplitText('.landing__content__title', {
       type: 'lines',
@@ -82,7 +89,13 @@ class Landing extends React.Component {
       .from('.main', { opacity: 0, duration: 2, ease: 'power4.out' }, '-=1')
       .from(
         '.landing__logo',
-        { opacity: 0, duration: 2, ease: 'power4.out' },
+        {
+          opacity: 0,
+          duration: 1,
+          ease: 'power4.out',
+          yPercent: 100,
+          scale: 0.75,
+        },
         '-=1.5'
       );
 
