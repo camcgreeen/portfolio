@@ -7,6 +7,8 @@
 
 .anim-container {
   overflow: hidden;
+  // align-self: flex-end;
+  // transform: translateY(-25%);
 }
 
 .landing {
@@ -25,7 +27,7 @@
     width: 50%;
     height: 55vh;
     // background-color: white;
-    opacity: 0.5;
+    // opacity: 0.5;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -46,6 +48,7 @@
     width: 400px;
     height: 400px;
     position: relative;
+    // align-self: flex-end;
     // overflow: hidden;
     &:hover {
       .circle1 {
