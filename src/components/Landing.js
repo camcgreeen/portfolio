@@ -93,7 +93,6 @@ class Landing extends React.Component {
           opacity: 0,
           duration: 1,
           ease: 'power4.out',
-          yPercent: 100,
           scale: 0.75,
         },
         '-=1.5'
