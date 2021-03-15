@@ -97,6 +97,10 @@ h4 {
   font-weight: 300;
 }
 
+p {
+  line-height: 150%;
+}
+
 .wrapper {
   width: 1500px;
   margin: 0 auto;
@@ -168,21 +172,50 @@ h4 {
   }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1750px) {
   .wrapper {
-    width: 750px;
+    width: 1250px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1500px) {
   .wrapper {
-    width: 500px;
+    width: 1000px;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .wrapper {
+    width: 750px;
+  }
+  html {
+    font-size: 22px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .wrapper {
+    // width: 500px;
+    width: 80%;
+  }
+  // html {
+  //   font-size: 20px;
+  // }
+}
+
+@media only screen and (max-width: 750px) {
+  .wrapper {
+    width: 90%;
+  }
+
+  html {
+    font-size: 20px;
   }
 }
 
 @media only screen and (max-width: 500px) {
   html {
-    font-size: 12px;
+    // font-size: 12px;
   }
   .wrapper {
     width: 90%;

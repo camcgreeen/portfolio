@@ -28,12 +28,10 @@ class Landing extends React.Component {
               <div class='btn__bg-2'></div>
             </div>
           </div>
-          <div className='anim-container'>
-            <div className='landing__logo'>
-              <div className='landing__logo__circle1'></div>
-              <div className='landing__logo__circle2'></div>
-              <div className='landing__logo__rectangle'></div>
-            </div>
+          <div className='landing__logo'>
+            <div className='landing__logo__circle1'></div>
+            <div className='landing__logo__circle2'></div>
+            <div className='landing__logo__rectangle'></div>
           </div>
         </div>
       </div>
@@ -101,7 +99,7 @@ class Landing extends React.Component {
       );
     // fix
     if (window.scrollY < 1000) {
-      setTimeout(() => this.jellyLogo(60, '7000px'), 500);
+      setTimeout(() => this.jellyLogo(60, '700px'), 500);
     }
     // this.jellyLogo(60, '800px');
   };

@@ -15,7 +15,7 @@
     &__me {
       font-size: 1rem;
       line-height: 140%;
-      max-width: 50%;
+      max-width: 65%;
       align-self: flex-start;
       margin-right: 120px;
       span {
@@ -35,7 +35,7 @@
   }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1500px) {
   .about {
     &__content {
       flex-direction: column;
