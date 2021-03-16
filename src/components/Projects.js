@@ -29,7 +29,11 @@ class Tools extends React.Component {
             </div>
             <div className='projects__screen__container__links projects-animate'>
               <Link to='/projects/chatbox'>
-                <button className='btn'>View project.</button>
+                {/* <button className='btn'>View project.</button> */}
+                <div class='btn'>
+                  <p class='btn__text'>View project.</p>
+                  <div class='btn__bg-2'></div>
+                </div>
               </Link>
               <a
                 href='https://github.com/camcgreen/chatbox'
@@ -81,17 +85,22 @@ class Tools extends React.Component {
               </div>
               <div className='projects__screen__container__links projects-animate'>
                 <Link to='/projects/jobstasy'>
-                  <button className='btn'>View project.</button>
+                  {/* <button className='btn'>View project.</button> */}
+                  <div class='btn'>
+                    <p class='btn__text'>View project.</p>
+                    <div class='btn__bg-2'></div>
+                  </div>
                 </Link>
                 <a
+                  style={{ height: 45 }}
                   href='https://github.com/camcgreen/jobstasy'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
                   <svg
                     className='projects__screen__container__links__github'
-                    width='48'
-                    height='48'
+                    width='45'
+                    height='45'
                     viewBox='0 0 48 48'
                     fill='none'
                     xmlns='http://www.w3.org/2000/svg'

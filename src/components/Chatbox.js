@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { SplitText } from 'gsap/SplitText';
 import Nav from './Nav';
 import Footer from './Footer';
 import Bubble from './Bubble';
@@ -17,36 +20,53 @@ class Chatbox extends React.Component {
         <Nav />
         <div className='wrapper'>
           <h4 className='project-detail__breadcrumb'>Chatbox</h4>
-          <h1>
+          <h1 className='project-detail__main-title'>
             Real-time <br /> chat application.
           </h1>
         </div>
-        <img
+        {/* <img
           className='fullscreen'
           src={Image1}
           alt='Chatbox chat application.'
-        />
+        /> */}
+        <div className='fullscreen'>
+          <div className='fullscreen__image fullscreen__image--1'></div>
+        </div>
         <div className='wrapper'>
-          <h2 className='project-detail__h2' style={{ marginTop: 300 }}>
-            The project.
-          </h2>
+          <h2 className='project-detail__h2'>The project.</h2>
           <div className='project-detail__details'>
-            <h4 className='project-detail__details__title'>Tools used</h4>
-            <h4>React, Firebase, Git & Figma.</h4>
-            <br />
-            <h4 className='project-detail__details__title'>Summary</h4>
-            <h4>
+            <h4 className='project-detail__details__title animate-detail'>
+              Tools used
+            </h4>
+            <h4 className='animate-detail'>React, Firebase, Git & Figma.</h4>
+            <h4
+              className='project-detail__details__title animate-detail'
+              style={{ marginTop: 50 }}
+            >
+              Summary
+            </h4>
+            <h4 className='animate-detail'>
               Chatbox is a real time chat application that can connect you to
               anyone in the world, complete with online status messages, typing
               indicators, read receipts and activity timers.
             </h4>
-            <div className='project-detail__details__buttons'>
-              <button className='btn'>Launch project.</button>
+            <div className='project-detail__details__buttons animate-detail'>
+              {/* <button className='btn'>Launch project.</button> */}
+              <a
+                href='https://chatbox-7b75a.web.app/'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <div class='btn'>
+                  <p class='btn__text'>Launch project.</p>
+                  <div class='btn__bg-2'></div>
+                </div>
+              </a>
               <a
                 href='https://github.com/camcgreen/chatbox'
                 target='_blank'
                 rel='noopener noreferrer'
-                style={{ width: 45, height: 45, marginLeft: 40 }}
+                // style={{ width: 45, height: 45, marginLeft: 50 }}
               >
                 <svg
                   className='project-detail__details__buttons__github'
@@ -64,10 +84,9 @@ class Chatbox extends React.Component {
               </a>
             </div>
           </div>
-          {
-            //replace this bit my homie
-          }
-          <div className='greybox'></div>
+          <div className='small-screen'>
+            <div className='small-screen__image small-screen__image--1'></div>
+          </div>
           <div className='project-detail__goal'>
             <h2 className='project-detail__h2'>The goal.</h2>
             <div className='project-detail__goal__detail'>
@@ -79,16 +98,12 @@ class Chatbox extends React.Component {
             </div>
           </div>
         </div>
-        <img
-          className='fullscreen'
-          src={Image1}
-          alt='Chatbox chat application.'
-        />
+        <div className='fullscreen'>
+          <div className='fullscreen__image fullscreen__image--2'></div>
+        </div>
         <div className='wrapper'>
           <div className='project-detail__build'>
-            <h2 className='project-detail__h2'>
-              How I <br /> built it.
-            </h2>
+            <h2 className='project-detail__h2'>How I built it.</h2>
             <div className='project-detail__build__detail'>
               <p>
                 Chatbox is a real-time chat application that can connect you to
@@ -97,10 +112,9 @@ class Chatbox extends React.Component {
               </p>
             </div>
           </div>
-          {
-            // replace this bit my homie
-          }
-          <div className='greybox'></div>
+          <div className='small-screen'>
+            <div className='small-screen__image small-screen__image--2'></div>
+          </div>
           <div className='project-detail__lessons'>
             <h2 className='project-detail__h2'>Lessons learned.</h2>
             <div className='project-detail__lessons__detail'>
@@ -112,13 +126,28 @@ class Chatbox extends React.Component {
             </div>
           </div>
           <div className='project-detail__buttons'>
-            <Link to='/'>
+            {/* <Link to='/'>
               <button className='btn'>Go home.</button>
+            </Link> */}
+            <Link to='/'>
+              {/* <button className='btn'>View project.</button> */}
+              <div class='btn'>
+                <p class='btn__text'>Go home.</p>
+                <div class='btn__bg-2'></div>
+              </div>
             </Link>
-            <Link to='/projects/jobstasy'>
+
+            {/* <Link to='/projects/jobstasy'>
               <button className='btn' style={{ marginLeft: 20 }}>
                 Next project.
               </button>
+            </Link> */}
+            <Link to='/projects/jobstasy'>
+              {/* <button className='btn'>View project.</button> */}
+              <div class='btn' style={{ marginLeft: 20 }}>
+                <p class='btn__text'>Next project.</p>
+                <div class='btn__bg-2'></div>
+              </div>
             </Link>
           </div>
         </div>
@@ -128,7 +157,202 @@ class Chatbox extends React.Component {
     );
   }
   componentDidMount = () => {
-    console.log(this.props);
+    if (typeof window !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+    }
+    setTimeout(() => {
+      let tlChatboxHeader = gsap.timeline({
+        // scrollTrigger: {
+        //   trigger: 'project-detail',
+        // },
+      });
+      new SplitText('.project-detail__breadcrumb', {
+        type: 'lines',
+        linesClass: 'line-child__chatbox__header',
+      });
+      new SplitText('.project-detail__breadcrumb', {
+        type: 'lines',
+        linesClass: 'line-parent',
+      });
+      new SplitText('.project-detail__main-title', {
+        type: 'lines',
+        linesClass: 'line-child__chatbox__header',
+      });
+      new SplitText('.project-detail__main-title', {
+        type: 'lines',
+        linesClass: 'line-parent',
+      });
+
+      tlChatboxHeader.from(
+        '.line-child__chatbox__header',
+        {
+          duration: 1.8,
+          y: 140,
+          opacity: 0,
+          ease: 'power4.out',
+          // delay: 1,
+          // skewY: 2,
+          // skewX: 1,
+          stagger: {
+            amount: 0.2,
+          },
+        },
+        '+=0'
+      );
+
+      let tlChatboxProject = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.project-detail__h2',
+          // start: 'top center',
+        },
+      });
+      new SplitText('.project-detail__h2', {
+        type: 'lines',
+        linesClass: 'line-child__chatbox__details',
+      });
+      new SplitText('.project-detail__h2', {
+        type: 'lines',
+        linesClass: 'line-parent',
+      });
+
+      tlChatboxProject
+        .from(
+          '.line-child__chatbox__details',
+          {
+            duration: 1.8,
+            y: 140,
+            opacity: 0,
+            ease: 'power4.out',
+            // delay: 1,
+            // skewY: 2,
+            // skewX: 1,
+            stagger: {
+              amount: 0.2,
+            },
+          },
+          '+=0'
+        )
+        .from(
+          '.animate-detail',
+          { opacity: 0, duration: 1, stagger: 0.1 },
+          '-=1.4'
+        );
+      // gsap.utils.toArray('.parallax-content').forEach((section, i) => {
+      //   const heightDiff =
+      //     section.offsetHeight - section.parentElement.offsetHeight;
+      //   gsap.fromTo(
+      //     section,
+      //     {
+      //       y: -heightDiff,
+      //     },
+      //     {
+      //       scrollTrigger: {
+      //         trigger: section.parentElement,0
+      //         scrub: true,
+      //       },
+      //       y: 0,
+      //       ease: 'none',
+      //     }
+      //   );
+
+      // gsap.from('.fullscreen__image', {
+      //   yPercent: -(
+      //     document.querySelector('.fullscreen__image').offsetHeight -
+      //     document.querySelector('.fullscreen').offsetHeight
+      //   ),
+      //   ease: 'none',
+      //   scrollTrigger: {
+      //     trigger: '.fullscreen',
+      //     // start: "top bottom", // the default values
+      //     // end: "bottom top",
+      //     scrub: true,
+      //   },
+      // });
+
+      // const fImage1 = document.querySelector('.fullscreen__image--1');
+      // fImage1.style.backgroundPosition = `50% ${-window.innerHeight / 2}px`;
+      // gsap.to(fImage1, {
+      //   backgroundPosition: `50% ${window.innerHeight / 2}px`,
+      //   ease: 'none',
+      //   scrollTrigger: {
+      //     trigger: '.fullscreen',
+      //     scrub: true,
+      //   },
+      // });
+
+      // const fImage2 = document.querySelector('.fullscreen__image--2');
+      // fImage2.style.backgroundPosition = `50% ${-window.innerHeight / 2}px`;
+      // gsap.to(fImage2, {
+      //   backgroundPosition: `50% ${window.innerHeight / 2}px`,
+      //   ease: 'none',
+      //   scrollTrigger: {
+      //     trigger: '.fullscreen',
+      //     scrub: true,
+      //   },
+      // });
+
+      console.log(document.querySelector('.fullscreen__image--1').offsetHeight);
+
+      gsap.utils.toArray('.fullscreen').forEach((section, i) => {
+        section.bg = section.querySelector('.fullscreen__image');
+        console.log('section = ', section);
+
+        if (i) {
+          section.bg.style.backgroundPosition = `0% ${
+            -window.innerHeight / 2
+          }px`;
+          gsap.to(section.bg, {
+            backgroundPosition: `0% ${window.innerHeight / 2}px`,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: section,
+              scrub: true,
+            },
+          });
+        } else {
+          section.bg.style.backgroundPosition = `0% ${
+            -window.innerHeight / 2
+          }px`;
+          gsap.to(section.bg, {
+            backgroundPosition: `0% ${window.innerHeight / 2}px`,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: section,
+              start:
+                'top ' +
+                document.querySelector('.fullscreen__image--1').offsetHeight,
+              end: 'bottom top',
+              scrub: true,
+            },
+          });
+        }
+      });
+
+      gsap.utils.toArray('.small-screen').forEach((section, i) => {
+        section.bg = section.querySelector('.small-screen__image');
+
+        section.bg.style.backgroundPosition = `50% ${
+          -window.innerHeight / 12 - 150
+        }px`;
+        gsap.to(section.bg, {
+          backgroundPosition: `50% ${window.innerHeight / 12}px`,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: section,
+            scrub: true,
+          },
+        });
+      });
+
+      // gsap.to('.small-screen__image', {
+      //   backgroundPosition: '50% 0%',
+      //   ease: 'none',
+      //   scrollTrigger: {
+      //     trigger: '.small-screen__image--1',
+      //     scrub: true,
+      //   },
+      // });
+    }, 0);
   };
 }
 

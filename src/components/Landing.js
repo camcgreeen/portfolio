@@ -93,24 +93,22 @@ class Landing extends React.Component {
       linesClass: 'line-parent',
     });
 
-    tl
-      // .from('.landing__bg', { opacity: 0, duration: 1 }, '+=0')
-      .from(
-        '.line-child__landing',
-        {
-          duration: 1.8,
-          y: 140,
-          opacity: 0,
-          ease: 'power4.out',
-          // delay: 1,
-          // skewY: 2,
-          // skewX: 1,
-          stagger: {
-            amount: 0.2,
-          },
+    tl.from(
+      '.line-child__landing',
+      {
+        duration: 1.8,
+        y: 140,
+        opacity: 0,
+        ease: 'power4.out',
+        // delay: 1,
+        // skewY: 2,
+        // skewX: 1,
+        stagger: {
+          amount: 0.2,
         },
-        '+=0'
-      )
+      },
+      '+=0'
+    )
       .from('.main', { opacity: 0, duration: 2, ease: 'power4.out' }, '-=1')
       .from(
         '.landing__logo',
@@ -124,7 +122,7 @@ class Landing extends React.Component {
       );
     // fix
     if (window.scrollY < 1000) {
-      setTimeout(() => this.jellyLogo(60, '700px'), 500);
+      setTimeout(() => this.jellyLogo(60, '500px'), 500);
     }
     // this.jellyLogo(60, '800px');
   };
