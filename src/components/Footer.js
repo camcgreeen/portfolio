@@ -1,4 +1,6 @@
 import React from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import '../main.scss';
 import './Footer.scss';
 
@@ -51,6 +53,24 @@ class Footer extends React.Component {
       </div>
     );
   }
+  componentDidMount = () => {
+    setTimeout(() => {
+      if (typeof window !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+      }
+      let tlFooter = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.footer',
+          scrub: true,
+        },
+      });
+      tlFooter.from(
+        '.footer__container > *',
+        { yPercent: -50, stagger: 0.2 },
+        '+=0'
+      );
+    }, 100);
+  };
 }
 
 export default Footer;

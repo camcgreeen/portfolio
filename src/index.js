@@ -12,11 +12,11 @@ import reportWebVitals from './reportWebVitals';
 const routing = (
   <BrowserRouter>
     <div id='routing-container'>
-      {/* <ScrollToTop> */}
-      <Route path='/' exact component={Home}></Route>
-      <Route path='/projects/chatbox' exact component={Chatbox}></Route>
-      <Route path='/projects/jobstasy' exact component={Jobstasy}></Route>
-      {/* </ScrollToTop> */}
+      <ScrollToTop>
+        <Route path='/' exact component={Home}></Route>
+        <Route path='/projects/chatbox' exact component={Chatbox}></Route>
+        <Route path='/projects/jobstasy' exact component={Jobstasy}></Route>
+      </ScrollToTop>
     </div>
   </BrowserRouter>
 );

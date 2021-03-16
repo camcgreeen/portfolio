@@ -1,17 +1,27 @@
 import React from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { SplitText } from 'gsap/SplitText';
 import Profile from '../images/profile.png';
 import '../main.scss';
 import './About.scss';
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 class About extends React.Component {
+  constructor(props) {
+    super(props);
+    // this.refAbout = React.createRef();
+    // this.cbRef = null;
+    // this.setCbRef = (element) => {
+    //   this.cbRef = element;
+    // }
+  }
   render() {
     return (
       <div className='wrapper'>
-        <div className='about' id='about'>
+        <div className='about' id='about' ref={this.props.setRef}>
+          {/* <div className='about' id='about' ref='refAbout'> */}
           <h2 className='about__h2'>About me.</h2>
           <div className='about__content'>
             <img
@@ -25,22 +35,16 @@ class About extends React.Component {
                 websites. I build products that provide{' '}
                 <span className='about__contact__me__special'>
                   fast and dynamic
-                </span>{' '}
+                </span>
                 experiences. 😀
-              </p>
-              <br />
-              <p className='parallax__p'>
+                <br />
+                <br />
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Pellentesque semper enim a vestibulum aliquam. Praesent
                 vulputate aliquam dolor, eu semper nulla venenatis id. Etiam
                 elementum, felis in ultricies malesuada, nisi metus finibus
                 lacus, eu ultrices augue nibh id mi.
               </p>
-              <br />
-              {/* <p className='parallax__p'>
-                Pellentesque scelerisque pulvinar ante in egestas. Donec eros
-                neque, vestibulum eu diam eget, elementum hendrerit erat.
-              </p> */}
             </div>
           </div>
         </div>
@@ -48,56 +52,54 @@ class About extends React.Component {
     );
   }
   componentDidMount = () => {
-    // let tl = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: '.about__me',
-    //     scrub: true,
-    //     // start: 'top top',
-    //     // end: 'bottom top',
-    //     // start: 'top top',
-    //     start: 'top 20%',
-    //     end: 'bottom top',
-    // toggleActions: 'restart none none none',
-    //   },
-    // });
-    // tl.fromTo(
-    //   '.about__me',
-    //   { yPercent: 0 },
-    //   { yPercent: 50, ease: 'power2.out' }
-    // );
-    // reveal
-    //   .from(
-    //     '.p1',
-    //     {
-    //       duration: 20,
-    //       // opacity: 0,
-    //       yPercent: 10,
-    //       ease: 'power4.out',
-    //     },
-    //     '+=0'
-    //   )
-    //   .from(
-    //     '.p2',
-    //     {
-    //       duration: 20,
-    //       // opacity: 0,
-    //       yPercent: 20,
-    //       ease: 'power4.out',
-    //     },
-    //     '+=0'
-    //   );
-
-    gsap.utils.toArray('.parallax__p').forEach((layer, i) => {
-      // console.log('layer', layer);
-      // const depth = layer.dataset.depth;
-      // const depth = layer.dataset.depth;
-      // console.log('depth', depth);
-      // // const movement = -(layer.offsetHeight * depth);
-      // const movement = -((layer.offsetHeight * i) / 4);
-      // // console.log('movement', movement);
-      // tl.from(layer, { y: movement, ease: 'none' }, 0);
-      // tl.fromTo(layer, { y: 0 }, { yPercent: 50 });
-    });
+    if (typeof window !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+    }
+    setTimeout(() => {
+      let tlAbout = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.about',
+          start: 'top center',
+        },
+      });
+      new SplitText('.about__h2', {
+        type: 'lines',
+        linesClass: 'line-child__about',
+      });
+      new SplitText('.about__h2', {
+        type: 'lines',
+        linesClass: 'line-parent',
+      });
+      tlAbout
+        .from(
+          '.line-child__about',
+          {
+            duration: 1.8,
+            y: 140,
+            opacity: 0,
+            ease: 'power4.out',
+          },
+          '+=0'
+        )
+        .from(
+          '.about__content__img',
+          {
+            opacity: 0,
+            duration: 1.8,
+            ease: 'power4.out',
+          },
+          '-=1.4'
+        )
+        .from(
+          '.about__content__me',
+          {
+            duration: 1.8,
+            opacity: 0,
+            ease: 'power4.out',
+          },
+          '-=1'
+        );
+    }, 100);
   };
 }
 

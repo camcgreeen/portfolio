@@ -21,7 +21,16 @@ class Landing extends React.Component {
             </h4>
             <div
               class='btn main'
-              onClick={() => console.log('aaa nice button you got there')}
+              onClick={() => {
+                if (this.props.aboutRef) {
+                  this.props.aboutRef.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                    inline: 'nearest',
+                  });
+                  // this.props.aboutRef.scrollTop;
+                }
+              }}
             >
               <p class='btn__text'>Explore.</p>
               <div class='btn__bg-1'></div>
@@ -38,22 +47,38 @@ class Landing extends React.Component {
     );
   }
   scroll = () => {
-    const about = document.querySelector('.about');
-    about.scrollIntoView({
-      behavior: 'smooth',
-    });
+    // const about = document.getElementById('about');
+    // about.scrollIntoView({
+    //   behavior: 'smooth',
+    // });
+
+    // this.props.aboutRef.current.scrollIntoView({ behavior: 'smooth' });
+    if (this.props.aboutRef) {
+      this.props.aboutRef.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+      // this.props.aboutRef.scrollTop;
+    }
   };
   componentDidMount = () => {
+    // console.log('about ref = ', this.props.aboutRef);
+
+    if (typeof window !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+    }
     let tl = gsap.timeline({
-      trigger: '.landing',
-      start: 'center top',
-      end: 'bottom center',
-      toggleActions: 'play pause resume reset',
+      // scrollTrigger: {
+      // trigger: '.landing',
+      // start: 'center top',
+      // end: 'bottom center',
+      // toggleActions: 'play pause resume reset',
+      // },
     });
 
     new SplitText('.landing__content__title', {
       type: 'lines',
-      linesClass: 'line-child',
+      linesClass: 'line-child__landing',
     });
     new SplitText('.landing__content__title', {
       type: 'lines',
@@ -61,7 +86,7 @@ class Landing extends React.Component {
     });
     new SplitText('.landing__content__description', {
       type: 'lines',
-      linesClass: 'line-child',
+      linesClass: 'line-child__landing',
     });
     new SplitText('.landing__content__description', {
       type: 'lines',
@@ -71,7 +96,7 @@ class Landing extends React.Component {
     tl
       // .from('.landing__bg', { opacity: 0, duration: 1 }, '+=0')
       .from(
-        '.line-child',
+        '.line-child__landing',
         {
           duration: 1.8,
           y: 140,

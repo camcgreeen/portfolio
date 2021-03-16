@@ -1,11 +1,11 @@
 @import '../utilities/variables.scss';
 
 .about {
-  margin-top: 400px;
-  margin-bottom: 400px;
+  margin-top: 100px;
+  // margin-bottom: 400px;
   width: 100%;
   &__h2 {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
   }
   &__content {
     display: flex;
@@ -13,11 +13,11 @@
     // justify-content: space-between;
     align-items: flex-start;
     &__me {
-      font-size: 1rem;
-      line-height: 140%;
-      max-width: 65%;
-      align-self: flex-start;
-      margin-right: 120px;
+      // font-size: 1rem;
+      // line-height: 140%;
+      max-width: 50%;
+      // align-self: flex-start;
+      // margin-right: 120px;
       span {
         background: $color-primary;
         color: $color-bg;
@@ -30,7 +30,7 @@
       // height: 60%;
       height: 100%;
       width: 300px;
-      margin-bottom: 100px;
+      margin-bottom: 50px;
     }
   }
 }
