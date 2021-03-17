@@ -4,8 +4,8 @@
   position: fixed;
   bottom: 60px;
   right: 60px;
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   background-color: $color-primary;
   display: flex;
@@ -13,11 +13,11 @@
   align-items: center;
   cursor: pointer;
   a {
-    height: 30px;
+    height: 24px;
   }
   svg {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     transition: transform 0.2s ease-in-out;
   }
   transition: transform 0.2s ease-in-out;
