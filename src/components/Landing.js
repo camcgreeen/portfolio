@@ -129,7 +129,7 @@ class Landing extends React.Component {
       );
     // fix
     if (window.scrollY < 1000) {
-      setTimeout(() => this.jellyLogo(60, '500px'), 500);
+      setTimeout(() => this.jellyLogo(60, '700px'), 500);
     }
     // this.jellyLogo(60, '800px');
   };

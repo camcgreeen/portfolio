@@ -41,7 +41,7 @@ class Tools extends React.Component {
           <h2 className='tools__h2'>
             Tools of <br /> the trade.
           </h2>
-          {}
+          {/* {}
           <ul className='tools__grid'>
             {technologies.map((technology) => {
               return (
@@ -54,7 +54,13 @@ class Tools extends React.Component {
                 </li>
               );
             })}
-          </ul>
+          </ul> */}
+          <p className='tools__p'>
+            I use react and other things. I use react and other things. I use
+            react and other things. I use react and other things. I use react
+            and other things. I use react and other things. I use react and
+            other things. I use react and other things.
+          </p>
         </div>
       </div>
     );
@@ -68,7 +74,7 @@ class Tools extends React.Component {
       let tlTools = gsap.timeline({
         scrollTrigger: {
           trigger: '.tools',
-          start: 'top center',
+          start: 'top bottom',
         },
       });
       new SplitText('.tools__h2', {

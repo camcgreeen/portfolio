@@ -17,7 +17,7 @@ class Tools extends React.Component {
           </h2>
           <div className='projects__screen__hero projects-animate'>
             <Link to='/projects/chatbox'>
-              <div className='projects__screen__hero__box'></div>
+              <div className='projects__screen__hero__box projects__screen__hero__box--1'></div>
             </Link>
           </div>
           <div className='projects__screen__container'>
@@ -61,7 +61,7 @@ class Tools extends React.Component {
           <div className='projects__screen' style={{ marginTop: 100 }}>
             <div className='projects__screen__hero projects-animate'>
               <Link to='/projects/jobstasy'>
-                <div className='projects__screen__hero__box'></div>
+                <div className='projects__screen__hero__box projects__screen__hero__box--2'></div>
               </Link>
             </div>
             {/* <div
@@ -127,7 +127,7 @@ class Tools extends React.Component {
       let tlProjects = gsap.timeline({
         scrollTrigger: {
           trigger: '.projects',
-          start: 'top center',
+          start: 'top bottom',
         },
       });
       new SplitText('.projects__h2', {
@@ -155,11 +155,27 @@ class Tools extends React.Component {
             opacity: 0,
             duration: 1,
             stagger: {
-              amount: 1.8,
+              amount: 0,
             },
           },
           '-=1'
         );
+
+      gsap.utils.toArray('.projects__screen__hero').forEach((section, i) => {
+        section.bg = section.querySelector('.projects__screen__hero__box');
+
+        section.bg.style.backgroundPosition = `50% ${
+          -window.innerHeight / 12 - 150
+        }px`;
+        gsap.to(section.bg, {
+          backgroundPosition: `50% ${window.innerHeight / 12}px`,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: section,
+            scrub: true,
+          },
+        });
+      });
     }, 100);
   };
 }

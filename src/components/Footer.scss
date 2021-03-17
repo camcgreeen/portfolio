@@ -30,7 +30,37 @@
     &__links {
       // margin-top: 40px;
       list-style: none;
-      font-size: 0.75rem;
+      // font-size: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      // transition: color 0.2s ease-in-out;
+      a {
+        text-decoration: none;
+        display: inline;
+        transition: color 0.2s ease-in-out;
+        &:hover {
+          color: darken($color-bg, 20%);
+        }
+      }
+      li {
+        text-decoration: none;
+        display: inline;
+        transition: color 0.2s ease-in-out;
+        &:hover {
+          color: darken($color-bg, 20%);
+        }
+        // background: yellow !important;
+      }
+      // a {
+      //   li {
+      //     text-decoration: none;
+      //     display: inline;
+      //     // background: yellow !important;
+      //   }
+      //   // text-decoration: none;
+      //   // display: 'inline';
+      //   // background: yellow !important;
+      // }
     }
 
     &__email {

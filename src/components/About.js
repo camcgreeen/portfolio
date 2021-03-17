@@ -21,7 +21,6 @@ class About extends React.Component {
     return (
       <div className='wrapper'>
         <div className='about' id='about' ref={this.props.setRef}>
-          {/* <div className='about' id='about' ref='refAbout'> */}
           <h2 className='about__h2'>About me.</h2>
           <div className='about__content'>
             <img
@@ -35,7 +34,7 @@ class About extends React.Component {
                 websites. I build products that provide{' '}
                 <span className='about__contact__me__special'>
                   fast and dynamic
-                </span>
+                </span>{' '}
                 experiences. 😀
                 <br />
                 <br />
@@ -82,23 +81,23 @@ class About extends React.Component {
           '+=0'
         )
         .from(
-          '.about__content__img',
+          '.about__content',
           {
             opacity: 0,
             duration: 1.8,
             ease: 'power4.out',
           },
           '-=0.5'
-        )
-        .from(
-          '.about__content__me',
-          {
-            duration: 1.8,
-            opacity: 0,
-            ease: 'power4.out',
-          },
-          '-=1'
         );
+      // .from(
+      //   '.about__content__me',
+      //   {
+      //     duration: 1.8,
+      //     opacity: 0,
+      //     ease: 'power4.out',
+      //   },
+      //   '-=1'
+      // );
     }, 100);
   };
 }

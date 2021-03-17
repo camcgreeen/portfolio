@@ -22,7 +22,7 @@
       span {
         background: $color-primary;
         color: $color-bg;
-        padding-right: 5px; // needed due to letter-spacing
+        padding-right: 1px; // needed due to letter-spacing
       }
     }
     &__img {
@@ -48,6 +48,16 @@
       }
       img {
         // margin-top: 100px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .about {
+    &__content {
+      &__me {
+        max-width: 100%;
       }
     }
   }

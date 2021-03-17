@@ -36,7 +36,6 @@ class Footer extends React.Component {
                 href='https://www.linkedin.com'
                 target='_blank'
                 rel='noopener noreferrer'
-                style={{ textDecoration: 'none', display: 'inline' }}
               >
                 <li>LinkedIn</li>
               </a>
@@ -45,8 +44,13 @@ class Footer extends React.Component {
               }
               <li>CV</li>
             </ul>
-            <a href='mailto:hello@camgreen.works'>
-              <h4 className='footer__container__email'>hello@camgreen.works</h4>
+            <a href='mailto:hello@camgreen.works' style={{ display: 'inline' }}>
+              <h4
+                className='footer__container__email'
+                style={{ display: 'inline' }}
+              >
+                hello@camgreen.works
+              </h4>
             </a>
           </div>
         </div>
