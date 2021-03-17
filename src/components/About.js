@@ -59,7 +59,7 @@ class About extends React.Component {
       let tlAbout = gsap.timeline({
         scrollTrigger: {
           trigger: '.about',
-          start: 'top center',
+          start: 'top bottom',
         },
       });
       new SplitText('.about__h2', {
@@ -74,7 +74,7 @@ class About extends React.Component {
         .from(
           '.line-child__about',
           {
-            duration: 1.8,
+            duration: 1,
             y: 140,
             opacity: 0,
             ease: 'power4.out',
@@ -88,7 +88,7 @@ class About extends React.Component {
             duration: 1.8,
             ease: 'power4.out',
           },
-          '-=1.4'
+          '-=0.5'
         )
         .from(
           '.about__content__me',

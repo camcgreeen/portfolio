@@ -3,10 +3,11 @@
 .project-detail {
   // margin-top: calc(#{$nav-height} + 150px);
   // background-color: hotpink;
-  padding-top: 300px;
+  // padding-top: 300px;
+  padding-top: 200px;
   &__breadcrumb {
-    margin-bottom: 40px;
-    color: $color-secondary;
+    margin-bottom: 25px;
+    // color: $color-secondary;
     span {
       color: $color-accent-1;
     }
@@ -164,7 +165,29 @@
   margin: 200px auto 0 auto;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1500px) {
+  .project-detail {
+    &__details {
+      max-width: 75%;
+    }
+    &__goal {
+      max-width: 75%;
+      margin-left: 25%;
+    }
+    &__build {
+      max-width: 75%;
+    }
+    &__lessons {
+      max-width: 75%;
+      margin-left: 25%;
+    }
+  }
+  .small-screen {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
   .project-detail {
     &__details {
       max-width: 100%;

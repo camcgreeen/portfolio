@@ -19,19 +19,7 @@ class Landing extends React.Component {
               Hi! I'm Cam, a diligent front-end developer <br /> based in sunny
               England. 👋🏼
             </h4>
-            <div
-              class='btn main'
-              onClick={() => {
-                if (this.props.aboutRef) {
-                  this.props.aboutRef.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start',
-                    inline: 'nearest',
-                  });
-                  // this.props.aboutRef.scrollTop;
-                }
-              }}
-            >
+            <div class='btn main' onClick={this.executeScroll}>
               <p class='btn__text'>Explore.</p>
               <div class='btn__bg-1'></div>
               <div class='btn__bg-2'></div>
@@ -46,20 +34,39 @@ class Landing extends React.Component {
       </div>
     );
   }
-  scroll = () => {
-    // const about = document.getElementById('about');
+  // scroll = () => {
+  //   if (this.props.aboutRef) {
+  //     // this.props.aboutRef.scrollIntoView({
+  //     //   behavior: 'smooth',
+  //     //   block: 'start',
+  //     //   inline: 'nearest',
+  //     // });
+  //     const container = document.getElementById('routing-container');
+  //     console.log(container);
+  //     window.scrollTo({
+  //       top: 1000,
+  //       behavior: 'smooth',
+  //     });
+  //   }
+  // };
+  // executeScroll = () => this.props.aboutRef.current.scrollIntoView();
+  executeScroll = () => {
+    // const about = document.querySelector('.about');
     // about.scrollIntoView({
     //   behavior: 'smooth',
     // });
 
-    // this.props.aboutRef.current.scrollIntoView({ behavior: 'smooth' });
-    if (this.props.aboutRef) {
-      this.props.aboutRef.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-      // this.props.aboutRef.scrollTop;
-    }
+    const element = document.querySelector('.about');
+    const offset = 0;
+    const bodyRect = document.body.getBoundingClientRect().top;
+    const elementRect = element.getBoundingClientRect().top;
+    const elementPosition = elementRect - bodyRect;
+    const offsetPosition = elementPosition - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth',
+    });
   };
   componentDidMount = () => {
     // console.log('about ref = ', this.props.aboutRef);

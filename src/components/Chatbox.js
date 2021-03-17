@@ -33,7 +33,7 @@ class Chatbox extends React.Component {
           <div className='fullscreen__image fullscreen__image--1'></div>
         </div>
         <div className='wrapper'>
-          <h2 className='project-detail__h2'>The project.</h2>
+          <h2 className='project-detail__h2 the-project'>The project.</h2>
           <div className='project-detail__details'>
             <h4 className='project-detail__details__title animate-detail'>
               Tools used
@@ -88,8 +88,8 @@ class Chatbox extends React.Component {
             <div className='small-screen__image small-screen__image--1'></div>
           </div>
           <div className='project-detail__goal'>
-            <h2 className='project-detail__h2'>The goal.</h2>
-            <div className='project-detail__goal__detail'>
+            <h2 className='project-detail__h2 the-goal'>The goal.</h2>
+            <div className='project-detail__goal__detail animate-goal'>
               <p>
                 Chatbox is a real-time chat application that can connect you to
                 anyone in the world, complete with online status and typing
@@ -103,8 +103,8 @@ class Chatbox extends React.Component {
         </div>
         <div className='wrapper'>
           <div className='project-detail__build'>
-            <h2 className='project-detail__h2'>How I built it.</h2>
-            <div className='project-detail__build__detail'>
+            <h2 className='project-detail__h2 how-built'>How I built it.</h2>
+            <div className='project-detail__build__detail animate-build'>
               <p>
                 Chatbox is a real-time chat application that can connect you to
                 anyone in the world, complete with online status and typing
@@ -116,8 +116,10 @@ class Chatbox extends React.Component {
             <div className='small-screen__image small-screen__image--2'></div>
           </div>
           <div className='project-detail__lessons'>
-            <h2 className='project-detail__h2'>Lessons learned.</h2>
-            <div className='project-detail__lessons__detail'>
+            <h2 className='project-detail__h2 lessons-learned'>
+              Lessons learned.
+            </h2>
+            <div className='project-detail__lessons__detail animate-lessons'>
               <p>
                 Chatbox is a real-time chat application that can connect you to
                 anyone in the world, complete with online status and typing
@@ -202,15 +204,15 @@ class Chatbox extends React.Component {
 
       let tlChatboxProject = gsap.timeline({
         scrollTrigger: {
-          trigger: '.project-detail__h2',
+          trigger: '.the-project',
           // start: 'top center',
         },
       });
-      new SplitText('.project-detail__h2', {
+      new SplitText('.the-project', {
         type: 'lines',
         linesClass: 'line-child__chatbox__details',
       });
-      new SplitText('.project-detail__h2', {
+      new SplitText('.the-project', {
         type: 'lines',
         linesClass: 'line-parent',
       });
@@ -234,6 +236,120 @@ class Chatbox extends React.Component {
         )
         .from(
           '.animate-detail',
+          { opacity: 0, duration: 1, stagger: 0.1 },
+          '-=1.4'
+        );
+
+      let tlChatboxGoal = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.the-goal',
+          // start: 'top center',
+        },
+      });
+      new SplitText('.the-goal', {
+        type: 'lines',
+        linesClass: 'line-child__chatbox__goal',
+      });
+      new SplitText('.the-goal', {
+        type: 'lines',
+        linesClass: 'line-parent',
+      });
+
+      tlChatboxGoal
+        .from(
+          '.line-child__chatbox__goal',
+          {
+            duration: 1.8,
+            y: 140,
+            opacity: 0,
+            ease: 'power4.out',
+            // delay: 1,
+            // skewY: 2,
+            // skewX: 1,
+            stagger: {
+              amount: 0.2,
+            },
+          },
+          '+=0'
+        )
+        .from(
+          '.animate-goal',
+          { opacity: 0, duration: 1, stagger: 0.1 },
+          '-=1.4'
+        );
+
+      let tlChatboxBuild = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.how-built',
+          // start: 'top center',
+        },
+      });
+      new SplitText('.how-built', {
+        type: 'lines',
+        linesClass: 'line-child__chatbox__build',
+      });
+      new SplitText('.how-built', {
+        type: 'lines',
+        linesClass: 'line-parent',
+      });
+
+      tlChatboxBuild
+        .from(
+          '.line-child__chatbox__build',
+          {
+            duration: 1.8,
+            y: 140,
+            opacity: 0,
+            ease: 'power4.out',
+            // delay: 1,
+            // skewY: 2,
+            // skewX: 1,
+            stagger: {
+              amount: 0.2,
+            },
+          },
+          '+=0'
+        )
+        .from(
+          '.animate-build',
+          { opacity: 0, duration: 1, stagger: 0.1 },
+          '-=1.4'
+        );
+
+      let tlChatboxLessons = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.lessons-learned',
+          // start: 'top center',
+        },
+      });
+      new SplitText('.lessons-learned', {
+        type: 'lines',
+        linesClass: 'line-child__chatbox__lessons',
+      });
+      new SplitText('.lessons-learned', {
+        type: 'lines',
+        linesClass: 'line-parent',
+      });
+
+      tlChatboxLessons
+        .from(
+          '.line-child__chatbox__lessons',
+          {
+            duration: 1.8,
+            y: 140,
+            opacity: 0,
+            ease: 'power4.out',
+            // delay: 1,
+            // skewY: 2,
+            // skewX: 1,
+            stagger: {
+              amount: 0.2,
+            },
+          },
+          '+=0'
+        )
+        .from(
+          '.animate-lessons',
           { opacity: 0, duration: 1, stagger: 0.1 },
           '-=1.4'
         );
@@ -290,6 +406,17 @@ class Chatbox extends React.Component {
       //     scrub: true,
       //   },
       // });
+
+      gsap.from(
+        '.fullscreen__image',
+        {
+          opacity: 0,
+          scale: 1.05,
+          ease: 'power4.out',
+          duration: 1.8,
+        },
+        '+=0'
+      );
 
       console.log(document.querySelector('.fullscreen__image--1').offsetHeight);
 
