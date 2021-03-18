@@ -165,10 +165,10 @@ class Tools extends React.Component {
         section.bg = section.querySelector('.projects__screen__hero__box');
 
         section.bg.style.backgroundPosition = `50% ${
-          -window.innerHeight / 12 - 150
+          -window.innerHeight / 24 - 50
         }px`;
         gsap.to(section.bg, {
-          backgroundPosition: `50% ${window.innerHeight / 12}px`,
+          backgroundPosition: `50% ${window.innerHeight / 24}px`,
           ease: 'none',
           scrollTrigger: {
             trigger: section,

@@ -16,8 +16,14 @@
     &__hero {
       margin-top: 50px;
       width: 100%;
-      height: 400px;
+      // height: 400px;
+      // height: 42.5vh;
+      // max-height: 300px;
+      // min-height: 150px;
       // object-fit: cover;
+      height: 30vw;
+      max-height: 400px;
+      min-height: 125px;
       overflow: hidden;
       background: grey;
       // min-height: 750px;

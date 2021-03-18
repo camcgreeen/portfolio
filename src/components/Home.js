@@ -1,4 +1,5 @@
 import React from 'react';
+import { gsap } from 'gsap';
 import Loading from './Loading';
 import Nav from './Nav';
 import Landing from './Landing';
@@ -21,13 +22,13 @@ class Home extends React.Component {
   }
   render() {
     return (
-      <>
+      <div className='home'>
         {this.state.loaded ? (
           <>
             <Nav />
             <Landing aboutRef={this.childRef} />
             <About setRef={this.setRef} />
-            <Tools />
+            {/* <Tools /> */}
             {/* <div className='projects-intro'>
               <div className='wrapper'>
                 <h2>
@@ -42,12 +43,11 @@ class Home extends React.Component {
         ) : (
           <Loading />
         )}
-      </>
+      </div>
     );
   }
   componentDidMount = () => {
     setTimeout(() => this.setState({ loaded: true }), 5000);
-    console.log('childRef,', this.childRef);
 
     if (
       /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -58,6 +58,10 @@ class Home extends React.Component {
     } else {
       this.setState({ mobileDevice: false });
     }
+    let initHome = gsap.timeline({
+      default: { opacity: 0, ease: 'back' },
+    });
+    initHome.from('.home', { ease: 'linear', autoAlpha: 0 }, '+=0');
   };
   setRef(input) {
     this.childRef = input;

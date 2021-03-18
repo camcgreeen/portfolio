@@ -146,7 +146,7 @@ class Chatbox extends React.Component {
             </Link> */}
             <Link to='/projects/jobstasy'>
               {/* <button className='btn'>View project.</button> */}
-              <div class='btn' style={{ marginLeft: 20 }}>
+              <div class='btn'>
                 <p class='btn__text'>Next project.</p>
                 <div class='btn__bg-2'></div>
               </div>
@@ -163,6 +163,24 @@ class Chatbox extends React.Component {
       gsap.registerPlugin(ScrollTrigger);
     }
     setTimeout(() => {
+      console.log('gsap');
+      // gsap.from(
+      //   '#routing-container',
+      //   {
+      //     opacity: 0,
+      //     ease: 'power4.out',
+      //     duration: 2.2,
+      //   },
+      //   '+=0'
+      // );
+      let initChatbox = gsap.timeline({
+        default: { opacity: 0, ease: 'back' },
+      });
+      initChatbox.from(
+        '.project-detail',
+        { ease: 'linear', autoAlpha: 0 },
+        '+=0'
+      );
       let tlChatboxHeader = gsap.timeline({
         // scrollTrigger: {
         //   trigger: 'project-detail',
@@ -191,6 +209,7 @@ class Chatbox extends React.Component {
           duration: 1.8,
           y: 140,
           opacity: 0,
+          // autoAlpha: 0,
           ease: 'power4.out',
           // delay: 1,
           // skewY: 2,

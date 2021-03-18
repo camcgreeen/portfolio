@@ -30,20 +30,34 @@ class About extends React.Component {
             />
             <div className='about__content__me'>
               <p className='parallax__p'>
-                I love to make things on the internet, like applications and
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit .
+                Pellentesque semper enim a{' '}
+                <span className='about__contact__me__special'>
+                  vestibulum aliquam
+                </span>
+                . I love to make things on the internet, like applications and
                 websites. I build products that provide{' '}
                 <span className='about__contact__me__special'>
                   fast and dynamic
                 </span>{' '}
                 experiences. 😀
+                {/* <br /> */}
+                {/* <br /> */}
+                {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Pellentesque semper enim a vestibulum aliquam. */}
                 <br />
                 <br />
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Pellentesque semper enim a vestibulum aliquam. Praesent
-                vulputate aliquam dolor, eu semper nulla venenatis id. Etiam
-                elementum, felis in ultricies malesuada, nisi metus finibus
-                lacus, eu ultrices augue nibh id mi.
+                Here are a few technologies I've been working with recently:
               </p>
+              <br />
+              <ul className='about__content__me__ul'>
+                <li>React</li>
+                <li>Node</li>
+                <li>GSAP</li>
+                <li>HTML</li>
+                <li>(S)CSS</li>
+                <li>JavaScript (ES6+)</li>
+              </ul>
             </div>
           </div>
         </div>

@@ -24,6 +24,18 @@
         color: $color-bg;
         padding-right: 1px; // needed due to letter-spacing
       }
+      &__ul {
+        margin-left: 1rem;
+        // max-width: 50%;
+        list-style-type: square;
+        // list-style-position: inside;
+        list-style-image: none;
+        // display: flex;
+        // justify-content: space-between;
+        // flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(auto, 175px));
+      }
     }
     &__img {
       // width: 500px;
@@ -42,7 +54,7 @@
       flex-direction: column;
       align-items: flex-start;
       &__me {
-        // max-width: 100%;
+        max-width: 75%;
         // max-width: 650px;
         margin-right: 0;
       }
@@ -54,6 +66,16 @@
 }
 
 @media only screen and (max-width: 1250px) {
+  .about {
+    &__content {
+      &__me {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
   .about {
     &__content {
       &__me {

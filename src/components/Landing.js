@@ -169,9 +169,6 @@ class Landing extends React.Component {
       };
 
       document.onmousemove = (e) => {
-        console.log(
-          `pageX = ${e.pageX},pageY = ${e.pageY}, scrollY = ${window.scrollY}`
-        );
         // console.log('circle1Bounds = ', circle1Bounds);
         // console.log('circle2Bounds = ', circle2Bounds);
         // console.log('rectangle = ', rectangle);

@@ -21,11 +21,11 @@ class Footer extends React.Component {
         <div className='wrapper'>
           <div className='footer__container'>
             <div className='footer__container__contact'>
-              <p className='footer__container__contact__p'>Want to talk?</p>
+              <h1 className='footer__container__contact__p'>Want to talk?</h1>
               <a href='mailto:hello@camgreen.works'>
-                <p className='footer__container__contact__p underline'>
+                <h1 className='footer__container__contact__p underline'>
                   Get in touch.
-                </p>
+                </h1>
               </a>
             </div>
             {

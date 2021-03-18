@@ -17,12 +17,13 @@
 
   &__container {
     height: 100vh;
+    min-height: 750px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     &__contact {
       &__p {
-        font-size: 4rem;
+        // font-size: 4rem;
         color: white !important;
       }
     }
@@ -44,6 +45,7 @@
       }
       li {
         text-decoration: none;
+        // color: orange;
         display: inline;
         transition: color 0.2s ease-in-out;
         &:hover {
@@ -84,4 +86,16 @@
   border-bottom: 5px solid white;
   display: inline-block;
   // padding-bottom: 10px;
+}
+
+@media only screen and (max-width: 650px) {
+  .footer {
+    &__container {
+      &__contact {
+        &__p {
+          font-size: 40px;
+        }
+      }
+    }
+  }
 }

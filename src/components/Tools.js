@@ -55,12 +55,18 @@ class Tools extends React.Component {
               );
             })}
           </ul> */}
-          <p className='tools__p'>
+          {/* <p className='tools__p'>
             I use react and other things. I use react and other things. I use
             react and other things. I use react and other things. I use react
             and other things. I use react and other things. I use react and
             other things. I use react and other things.
-          </p>
+          </p> */}
+          <ul className='tools__ul'>
+            <li>React</li>
+            <li>Node</li>
+            <li>GSAP</li>
+            <li>HTML & CSS</li>
+          </ul>
         </div>
       </div>
     );
