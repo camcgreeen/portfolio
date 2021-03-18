@@ -16,7 +16,7 @@ class Home extends React.Component {
     super(props);
     this.setRef = this.setRef.bind(this);
     this.state = {
-      loaded: true,
+      loaded: false,
       mobileDevice: false,
     };
   }
@@ -47,7 +47,7 @@ class Home extends React.Component {
     );
   }
   componentDidMount = () => {
-    setTimeout(() => this.setState({ loaded: true }), 5000);
+    setTimeout(() => this.setState({ loaded: true }), 4800);
 
     if (
       /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
