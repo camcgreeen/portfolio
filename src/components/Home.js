@@ -16,6 +16,7 @@ class Home extends React.Component {
     this.setRef = this.setRef.bind(this);
     this.state = {
       loaded: true,
+      mobileDevice: false,
     };
   }
   render() {
@@ -47,6 +48,16 @@ class Home extends React.Component {
   componentDidMount = () => {
     setTimeout(() => this.setState({ loaded: true }), 5000);
     console.log('childRef,', this.childRef);
+
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      this.setState({ mobileDevice: true });
+    } else {
+      this.setState({ mobileDevice: false });
+    }
   };
   setRef(input) {
     this.childRef = input;

@@ -128,42 +128,124 @@ class Landing extends React.Component {
         '-=1.5'
       );
     // fix
-    if (window.scrollY < 1000) {
-      setTimeout(() => this.jellyLogo(60, '700px'), 500);
-    }
+    // if (window.scrollY < 1000) {
+    //   setTimeout(() => this.jellyLogo(60, '700px'), 500);
+    // }
     // this.jellyLogo(60, '800px');
+    setTimeout(() => this.jellyLogo(80, '700px'), 500);
   };
   jellyLogo = (constrain, perspective) => {
     const circle1 = document.querySelector('.landing__logo__circle1');
     const circle2 = document.querySelector('.landing__logo__circle2');
     const rectangle = document.querySelector('.landing__logo__rectangle');
+    // const landingHeight = document.querySelector('.landing').offsetHeight;
+    const offsetTop = document.querySelector('.about__h2').offsetTop;
+    // console.log(offsetTop);
+    // console.log('landingHeight = ', landingHeight);
 
     if (circle1 && circle2 && rectangle) {
-      const circle1Bounds = circle1.getBoundingClientRect();
-      const circle2Bounds = circle2.getBoundingClientRect();
-      const rectangleBounds = rectangle.getBoundingClientRect();
+      // const circle1Bounds = circle1.getBoundingClientRect();
+      // const circle2Bounds = circle2.getBoundingClientRect();
+      // const rectangleBounds = rectangle.getBoundingClientRect();
+      // document.onresize = (e) => {
+      //   // (landingHeight = document.querySelector('.landing').offsetHeight);
+
+      // }
+      let circle1Bounds = circle1.getBoundingClientRect();
+      let circle2Bounds = circle2.getBoundingClientRect();
+      let rectangleBounds = rectangle.getBoundingClientRect();
+
+      window.onresize = (e) => {
+        //DEBOUNCE THIS
+        circle1Bounds = circle1.getBoundingClientRect();
+        circle2Bounds = circle2.getBoundingClientRect();
+        rectangleBounds = rectangle.getBoundingClientRect();
+
+        // console.log('resize');
+
+        // console.log('circle1Bounds = ', circle1Bounds);
+        // console.log('circle2Bounds = ', circle2Bounds);
+        // console.log('rectangle = ', rectangle);
+      };
+
       document.onmousemove = (e) => {
-        if (window.scrollY < 1000) {
+        console.log(
+          `pageX = ${e.pageX},pageY = ${e.pageY}, scrollY = ${window.scrollY}`
+        );
+        // console.log('circle1Bounds = ', circle1Bounds);
+        // console.log('circle2Bounds = ', circle2Bounds);
+        // console.log('rectangle = ', rectangle);
+        // if (window.scrollY < 1000) {
+        if (e.pageY < offsetTop) {
           // console.log('making jelly');
           if (circle1 && circle2 && rectangle) {
+            // let rotateCircle1X =
+            //   -(e.clientY - circle1Bounds.y - circle1Bounds.height / 2) /
+            //   constrain;
+            // let rotateCircle1Y =
+            //   (e.clientX - circle1Bounds.x - circle1Bounds.width / 2) /
+            //   constrain;
+            // let rotateCircle2X =
+            //   -(e.clientY - circle2Bounds.y - circle2Bounds.height / 2) /
+            //   (constrain * 1.5);
+            // let rotateCircle2Y =
+            //   (e.clientX - circle2Bounds.x - circle2Bounds.width / 2) /
+            //   (constrain * 1.5);
+            // let rotateRectangleX =
+            //   -(e.clientY - rectangleBounds.y - rectangleBounds.height / 2) /
+            //   (constrain * 2);
+            // let rotateRectangleY =
+            //   (e.clientX - rectangleBounds.x - rectangleBounds.width / 2) /
+            //   (constrain * 2);
+
+            // let rotateCircle1X =
+            // -(
+            //   e.pageY -
+            //   (circle1Bounds.top + window.scrollY) -
+            //   circle1Bounds.height / 2
+            // ) / constrain;
+            // let rotateCircle1Y =
+            //   (e.pageX -
+            //     (circle1Bounds.left + window.scrollX) -
+            //     circle1Bounds.width / 2) /
+            //   constrain;
+            // let rotateCircle1Y = 0;
+
+            // let rotateCircle1X =
+            //   -(e.pageY - (circle1Bounds.y + window.scrollY) - circle1Bounds.height / 2) /
+            //   constrain;
+            // let rotateCircle1Y =
+            //   (e.pageX - (circle1Bounds.x + window.scrollX) - circle1Bounds.width / 2) / constrain;
+            // let rotateCircle2X =
+            //   -(e.pageY - circle2Bounds.y - circle2Bounds.height / 2) /
+            //   (constrain * 1.5);
+            // let rotateCircle2Y =
+            //   (e.pageX - circle2Bounds.x - circle2Bounds.width / 2) /
+            //   (constrain * 1.5);
+            // let rotateRectangleX =
+            //   -(e.pageY - rectangleBounds.y - rectangleBounds.height / 2) /
+            //   (constrain * 2);
+            // let rotateRectangleY =
+            //   (e.pageX - rectangleBounds.x - rectangleBounds.width / 2) /
+            //   (constrain * 2);
+
             let rotateCircle1X =
-              -(e.clientY - circle1Bounds.y - circle1Bounds.height / 2) /
-              constrain;
+              -(e.pageY - circle1.offsetTop - circle1.offsetHeight) / constrain;
             let rotateCircle1Y =
-              (e.clientX - circle1Bounds.x - circle1Bounds.width / 2) /
-              constrain;
+              (e.pageX - circle1Bounds.x - circle1.offsetWidth / 2) / constrain;
             let rotateCircle2X =
-              -(e.clientY - circle2Bounds.y - circle2Bounds.height / 2) /
+              -(e.pageY - circle2.offsetTop - circle2.offsetHeight) /
               (constrain * 1.5);
             let rotateCircle2Y =
-              (e.clientX - circle2Bounds.x - circle2Bounds.width / 2) /
+              (e.pageX - circle2Bounds.x - circle2.offsetWidth / 2) /
               (constrain * 1.5);
             let rotateRectangleX =
-              -(e.clientY - rectangleBounds.y - rectangleBounds.height / 2) /
+              -(e.pageY - rectangle.offsetTop - rectangle.offsetHeight) /
               (constrain * 2);
             let rotateRectangleY =
-              (e.clientX - rectangleBounds.x - rectangleBounds.width / 2) /
+              (e.pageX - rectangleBounds.x - rectangle.offsetWidth / 2) /
               (constrain * 2);
+
             circle1.style.transform = `perspective(${perspective}) translate(-50%, -50%) rotateX(${rotateCircle1X}deg) rotateY(${rotateCircle1Y}deg)`;
             circle2.style.transform = `perspective(${perspective}) translate(calc(-50% + ${
               rotateCircle2Y * 4
