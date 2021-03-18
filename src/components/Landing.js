@@ -155,11 +155,21 @@ class Landing extends React.Component {
       let circle2Bounds = circle2.getBoundingClientRect();
       let rectangleBounds = rectangle.getBoundingClientRect();
 
+      let resizeTimer;
+
       window.onresize = (e) => {
         //DEBOUNCE THIS
-        circle1Bounds = circle1.getBoundingClientRect();
-        circle2Bounds = circle2.getBoundingClientRect();
-        rectangleBounds = rectangle.getBoundingClientRect();
+
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+          console.log('resize');
+          circle1Bounds = circle1.getBoundingClientRect();
+          circle2Bounds = circle2.getBoundingClientRect();
+          rectangleBounds = rectangle.getBoundingClientRect();
+        }, 250);
+        // circle1Bounds = circle1.getBoundingClientRect();
+        // circle2Bounds = circle2.getBoundingClientRect();
+        // rectangleBounds = rectangle.getBoundingClientRect();
 
         // console.log('resize');
 

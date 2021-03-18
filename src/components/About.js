@@ -24,11 +24,11 @@ class About extends React.Component {
           <h2 className='about__h2'>About me.</h2>
           <div className='about__content'>
             <img
-              className='about__content__img'
+              className='about__content__img about-animate'
               src={Profile}
               alt='profile picture'
             />
-            <div className='about__content__me'>
+            <div className='about__content__me about-animate'>
               <p className='parallax__p'>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit .
                 Pellentesque semper enim a{' '}
@@ -92,16 +92,19 @@ class About extends React.Component {
             opacity: 0,
             ease: 'power4.out',
           },
-          '+=0'
+          '-=0'
         )
         .from(
-          '.about__content',
+          '.about-animate',
           {
             opacity: 0,
             duration: 1.8,
             ease: 'power4.out',
+            stagger: {
+              amount: 0.2,
+            },
           },
-          '-=0.5'
+          '-=0.75'
         );
       // .from(
       //   '.about__content__me',

@@ -155,10 +155,10 @@ class Tools extends React.Component {
             opacity: 0,
             duration: 1,
             stagger: {
-              amount: 0,
+              amount: 0.8,
             },
           },
-          '-=1'
+          '-=1.25'
         );
 
       gsap.utils.toArray('.projects__screen__hero').forEach((section, i) => {
