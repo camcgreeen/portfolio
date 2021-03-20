@@ -16,7 +16,7 @@ class Home extends React.Component {
     super(props);
     this.setRef = this.setRef.bind(this);
     this.state = {
-      loaded: false,
+      loaded: true,
       mobileDevice: false,
     };
   }

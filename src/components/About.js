@@ -23,42 +23,49 @@ class About extends React.Component {
         <div className='about' id='about' ref={this.props.setRef}>
           <h2 className='about__h2'>About me.</h2>
           <div className='about__content'>
+            <div className='about__content__me about-animate'>
+              <p className='parallax__p'>
+                Hello! I'm Cam, a front-end developer based in England. I love
+                to make things on the internet, like applications and websites.
+                😀
+                {/* I love
+                to make things on the internet, like applications and websites.
+                I always aim to build things that provide{' '}
+                  fast and dynamic
+                experiences. 😀 */}{' '}
+                {/* I enjoy creating things that live on the internet, whether that
+                be websites, applications, or anything in between. */}
+                <br />
+                <br />I always aim to build things that are fast, responsive and
+                pixel-perfect.
+                {/* Something interesting and cool words that keep the page structure. */}{' '}
+                I'm quietly confident, creatively curious, and consistently
+                seeking to improve.
+                {/* <br />
+                <br />
+                Shortly after graduating from Northeastern University, I joined
+                the engineering team at Upstatement where I work on a wide
+                variety of interesting and meaningful projects on a daily basis. */}
+                <br />
+                <br />
+                Here are some of the tools I like to use:
+              </p>
+              <br />
+              <ul className='about__content__me__ul'>
+                <li>React</li>
+                <li>JavaScript (ES6+)</li>
+                {/* <li>Node</li> */}
+                <li>HTML</li>
+                <li>(S)CSS</li>
+                <li>Git</li>
+                <li>Figma</li>
+              </ul>
+            </div>
             <img
               className='about__content__img about-animate'
               src={Profile}
               alt='profile picture'
             />
-            <div className='about__content__me about-animate'>
-              <p className='parallax__p'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit .
-                Pellentesque semper enim a{' '}
-                <span className='about__contact__me__special'>
-                  vestibulum aliquam
-                </span>
-                . I love to make things on the internet, like applications and
-                websites. I build products that provide{' '}
-                <span className='about__contact__me__special'>
-                  fast and dynamic
-                </span>{' '}
-                experiences. 😀
-                {/* <br /> */}
-                {/* <br /> */}
-                {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Pellentesque semper enim a vestibulum aliquam. */}
-                <br />
-                <br />
-                Here are a few technologies I've been working with recently:
-              </p>
-              <br />
-              <ul className='about__content__me__ul'>
-                <li>React</li>
-                <li>Node</li>
-                <li>GSAP</li>
-                <li>HTML</li>
-                <li>(S)CSS</li>
-                <li>JavaScript (ES6+)</li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>

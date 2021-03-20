@@ -30,7 +30,7 @@ class Chatbox extends React.Component {
           alt='Chatbox chat application.'
         /> */}
         <div className='fullscreen'>
-          <div className='fullscreen__image fullscreen__image--1'></div>
+          <div className='fullscreen__image  fullscreen__image--1 fullscreen__image--chatbox--1'></div>
         </div>
         <div className='wrapper'>
           <h2 className='project-detail__h2 the-project'>The project.</h2>
@@ -38,7 +38,9 @@ class Chatbox extends React.Component {
             <h4 className='project-detail__details__title animate-detail'>
               Tools used
             </h4>
-            <h4 className='animate-detail'>React, Firebase, Git & Figma.</h4>
+            <h4 className='animate-detail'>
+              React, React Router, Firebase, Git & Figma.
+            </h4>
             <h4
               className='project-detail__details__title animate-detail'
               style={{ marginTop: 50 }}
@@ -85,35 +87,54 @@ class Chatbox extends React.Component {
             </div>
           </div>
           <div className='small-screen'>
-            <div className='small-screen__image small-screen__image--1'></div>
+            <div className='small-screen__image small-screen__image--1 small-screen__image--chatbox--1 '></div>
           </div>
           <div className='project-detail__goal'>
             <h2 className='project-detail__h2 the-goal'>The goal.</h2>
             <div className='project-detail__goal__detail animate-goal'>
               <p>
-                Chatbox is a real-time chat application that can connect you to
-                anyone in the world, complete with online status and typing
-                indicators, read reciepts and activity timers.
+                I wanted to continue to develop my React skills, while learning
+                Firebase to handle the database, in order to build an instant
+                messaging app.
+                <br />
+                <br />I knew that Firebase would be perfect for developing this
+                type of application because of its live database updates and
+                relatively small learning curve.
               </p>
             </div>
           </div>
         </div>
         <div className='fullscreen'>
-          <div className='fullscreen__image fullscreen__image--2'></div>
+          <div className='fullscreen__image fullscreen__image--2 fullscreen__image--chatbox--2'></div>
         </div>
         <div className='wrapper'>
           <div className='project-detail__build'>
-            <h2 className='project-detail__h2 how-built'>How I built it.</h2>
+            <h2 className='project-detail__h2 how-built'>How it works.</h2>
             <div className='project-detail__build__detail animate-build'>
               <p>
-                Chatbox is a real-time chat application that can connect you to
-                anyone in the world, complete with online status and typing
-                indicators, read reciepts and activity timers.
+                The application leverages the power of the Firebase onSnapshot
+                method, in order to get real-time updates when the database is
+                written to. This means that when a message is sent, it is added
+                to the messages array within the chat object for those two
+                users.
+                <br />
+                <br />
+                The onSnapshot method then allows us to detect that there has
+                been a change to the messages array, which we use to update the
+                local state in React of the messages array. This state change
+                cause a re-render of the component which then displays the
+                updated chat with almost no delay.
+                <br />
+                <br />
+                Authentication is handled by Firebase through the means of some
+                convenient methods. Firebase provides some server-side
+                validation so only some application-specific client-side
+                validation is needed.
               </p>
             </div>
           </div>
           <div className='small-screen'>
-            <div className='small-screen__image small-screen__image--2'></div>
+            <div className='small-screen__image small-screen__image--2 small-screen__image--chatbox--2'></div>
           </div>
           <div className='project-detail__lessons'>
             <h2 className='project-detail__h2 lessons-learned'>
@@ -121,9 +142,15 @@ class Chatbox extends React.Component {
             </h2>
             <div className='project-detail__lessons__detail animate-lessons'>
               <p>
-                Chatbox is a real-time chat application that can connect you to
-                anyone in the world, complete with online status and typing
-                indicators, read reciepts and activity timers.
+                For future projects of this size, I would set up for test-driven
+                development from the start. The project grew in complexity,
+                beyond the original idea, and manual testing became unreliable.
+                <br />
+                <br />I would also consider using the React Context API to
+                manage the chat state, as there were several different
+                components that needed to read and write to this state, and it
+                got quite cumbersome managing state with lots of props and
+                callbacks.
               </p>
             </div>
           </div>

@@ -13,14 +13,15 @@ class Landing extends React.Component {
           <div className='landing__bg'></div>
           <div className='landing__content'>
             <h1 className='landing__content__title'>
-              Creative developer <br /> & designer.
+              {/* Creative developer <br /> & designer. */}
+              Creative developer <br /> for the web.
             </h1>
             <h4 className='landing__content__description'>
-              Hi! I'm Cam, a diligent front-end developer <br /> based in sunny
-              England. 👋🏼
+              Hi! I'm Cam, a front-end developer <br /> based in sunny England.
+              👋🏼
             </h4>
             <div class='btn main' onClick={this.executeScroll}>
-              <p class='btn__text'>Explore.</p>
+              <p class='btn__text'>Learn more.</p>
               <div class='btn__bg-1'></div>
               <div class='btn__bg-2'></div>
             </div>
@@ -155,6 +156,9 @@ class Landing extends React.Component {
       let circle2Bounds = circle2.getBoundingClientRect();
       let rectangleBounds = rectangle.getBoundingClientRect();
 
+      const isSafari = window.safari !== undefined;
+      // isSafari ? console.log('Safari, yeah!') : console.log('not Safari!');
+
       let resizeTimer;
 
       window.onresize = (e) => {
@@ -183,7 +187,7 @@ class Landing extends React.Component {
         // console.log('circle2Bounds = ', circle2Bounds);
         // console.log('rectangle = ', rectangle);
         // if (window.scrollY < 1000) {
-        if (e.pageY < offsetTop) {
+        if (e.pageY < offsetTop && !isSafari) {
           // console.log('making jelly');
           if (circle1 && circle2 && rectangle) {
             // let rotateCircle1X =

@@ -59,20 +59,16 @@ class Footer extends React.Component {
   }
   componentDidMount = () => {
     setTimeout(() => {
-      if (typeof window !== 'undefined') {
-        gsap.registerPlugin(ScrollTrigger);
-      }
+      // if (typeof window !== 'undefined') {
+      //   gsap.registerPlugin(ScrollTrigger);
+      // }
       let tlFooter = gsap.timeline({
         scrollTrigger: {
-          trigger: '.footer',
+          trigger: '.footer__container',
           scrub: true,
         },
       });
-      tlFooter.from(
-        '.footer__container > *',
-        { yPercent: -50, stagger: 0.2 },
-        '+=0'
-      );
+      tlFooter.from('.footer__container', { yPercent: -50 }, '+=0');
     }, 100);
   };
 }
