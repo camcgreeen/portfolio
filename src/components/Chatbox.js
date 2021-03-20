@@ -6,7 +6,6 @@ import { SplitText } from 'gsap/SplitText';
 import Nav from './Nav';
 import Footer from './Footer';
 import Bubble from './Bubble';
-import Image1 from '../images/chatbox-hero.jpg';
 import './ProjectDetail.scss';
 import '../main.scss';
 
@@ -24,11 +23,6 @@ class Chatbox extends React.Component {
             Real-time <br /> chat application.
           </h1>
         </div>
-        {/* <img
-          className='fullscreen'
-          src={Image1}
-          alt='Chatbox chat application.'
-        /> */}
         <div className='fullscreen'>
           <div className='fullscreen__image  fullscreen__image--1 fullscreen__image--chatbox--1'></div>
         </div>
@@ -53,7 +47,6 @@ class Chatbox extends React.Component {
               indicators, read receipts and activity timers.
             </h4>
             <div className='project-detail__details__buttons animate-detail'>
-              {/* <button className='btn'>Launch project.</button> */}
               <a
                 href='https://chatbox-7b75a.web.app/'
                 target='_blank'
@@ -68,7 +61,6 @@ class Chatbox extends React.Component {
                 href='https://github.com/camcgreen/chatbox'
                 target='_blank'
                 rel='noopener noreferrer'
-                // style={{ width: 45, height: 45, marginLeft: 50 }}
               >
                 <svg
                   className='project-detail__details__buttons__github'
@@ -155,24 +147,13 @@ class Chatbox extends React.Component {
             </div>
           </div>
           <div className='project-detail__buttons'>
-            {/* <Link to='/'>
-              <button className='btn'>Go home.</button>
-            </Link> */}
             <Link to='/'>
-              {/* <button className='btn'>View project.</button> */}
               <div class='btn'>
                 <p class='btn__text'>Go home.</p>
                 <div class='btn__bg-2'></div>
               </div>
             </Link>
-
-            {/* <Link to='/projects/jobstasy'>
-              <button className='btn' style={{ marginLeft: 20 }}>
-                Next project.
-              </button>
-            </Link> */}
             <Link to='/projects/jobstasy'>
-              {/* <button className='btn'>View project.</button> */}
               <div class='btn'>
                 <p class='btn__text'>Next project.</p>
                 <div class='btn__bg-2'></div>
@@ -190,16 +171,6 @@ class Chatbox extends React.Component {
       gsap.registerPlugin(ScrollTrigger);
     }
     setTimeout(() => {
-      console.log('gsap');
-      // gsap.from(
-      //   '#routing-container',
-      //   {
-      //     opacity: 0,
-      //     ease: 'power4.out',
-      //     duration: 2.2,
-      //   },
-      //   '+=0'
-      // );
       let initChatbox = gsap.timeline({
         default: { opacity: 0, ease: 'back' },
       });
@@ -208,11 +179,7 @@ class Chatbox extends React.Component {
         { ease: 'linear', autoAlpha: 0 },
         '+=0'
       );
-      let tlChatboxHeader = gsap.timeline({
-        // scrollTrigger: {
-        //   trigger: 'project-detail',
-        // },
-      });
+      let tlChatboxHeader = gsap.timeline();
       new SplitText('.project-detail__breadcrumb', {
         type: 'lines',
         linesClass: 'line-child__chatbox__header',
@@ -236,11 +203,7 @@ class Chatbox extends React.Component {
           duration: 1.8,
           y: 140,
           opacity: 0,
-          // autoAlpha: 0,
           ease: 'power4.out',
-          // delay: 1,
-          // skewY: 2,
-          // skewX: 1,
           stagger: {
             amount: 0.2,
           },
@@ -251,7 +214,6 @@ class Chatbox extends React.Component {
       let tlChatboxProject = gsap.timeline({
         scrollTrigger: {
           trigger: '.the-project',
-          // start: 'top center',
         },
       });
       new SplitText('.the-project', {
@@ -271,9 +233,6 @@ class Chatbox extends React.Component {
             y: 140,
             opacity: 0,
             ease: 'power4.out',
-            // delay: 1,
-            // skewY: 2,
-            // skewX: 1,
             stagger: {
               amount: 0.2,
             },
@@ -289,7 +248,6 @@ class Chatbox extends React.Component {
       let tlChatboxGoal = gsap.timeline({
         scrollTrigger: {
           trigger: '.the-goal',
-          // start: 'top center',
         },
       });
       new SplitText('.the-goal', {
@@ -309,9 +267,6 @@ class Chatbox extends React.Component {
             y: 140,
             opacity: 0,
             ease: 'power4.out',
-            // delay: 1,
-            // skewY: 2,
-            // skewX: 1,
             stagger: {
               amount: 0.2,
             },
@@ -327,7 +282,6 @@ class Chatbox extends React.Component {
       let tlChatboxBuild = gsap.timeline({
         scrollTrigger: {
           trigger: '.how-built',
-          // start: 'top center',
         },
       });
       new SplitText('.how-built', {
@@ -347,9 +301,6 @@ class Chatbox extends React.Component {
             y: 140,
             opacity: 0,
             ease: 'power4.out',
-            // delay: 1,
-            // skewY: 2,
-            // skewX: 1,
             stagger: {
               amount: 0.2,
             },
@@ -365,7 +316,6 @@ class Chatbox extends React.Component {
       let tlChatboxLessons = gsap.timeline({
         scrollTrigger: {
           trigger: '.lessons-learned',
-          // start: 'top center',
         },
       });
       new SplitText('.lessons-learned', {
@@ -385,9 +335,6 @@ class Chatbox extends React.Component {
             y: 140,
             opacity: 0,
             ease: 'power4.out',
-            // delay: 1,
-            // skewY: 2,
-            // skewX: 1,
             stagger: {
               amount: 0.2,
             },
@@ -399,59 +346,6 @@ class Chatbox extends React.Component {
           { opacity: 0, duration: 1, stagger: 0.1 },
           '-=1.4'
         );
-      // gsap.utils.toArray('.parallax-content').forEach((section, i) => {
-      //   const heightDiff =
-      //     section.offsetHeight - section.parentElement.offsetHeight;
-      //   gsap.fromTo(
-      //     section,
-      //     {
-      //       y: -heightDiff,
-      //     },
-      //     {
-      //       scrollTrigger: {
-      //         trigger: section.parentElement,0
-      //         scrub: true,
-      //       },
-      //       y: 0,
-      //       ease: 'none',
-      //     }
-      //   );
-
-      // gsap.from('.fullscreen__image', {
-      //   yPercent: -(
-      //     document.querySelector('.fullscreen__image').offsetHeight -
-      //     document.querySelector('.fullscreen').offsetHeight
-      //   ),
-      //   ease: 'none',
-      //   scrollTrigger: {
-      //     trigger: '.fullscreen',
-      //     // start: "top bottom", // the default values
-      //     // end: "bottom top",
-      //     scrub: true,
-      //   },
-      // });
-
-      // const fImage1 = document.querySelector('.fullscreen__image--1');
-      // fImage1.style.backgroundPosition = `50% ${-window.innerHeight / 2}px`;
-      // gsap.to(fImage1, {
-      //   backgroundPosition: `50% ${window.innerHeight / 2}px`,
-      //   ease: 'none',
-      //   scrollTrigger: {
-      //     trigger: '.fullscreen',
-      //     scrub: true,
-      //   },
-      // });
-
-      // const fImage2 = document.querySelector('.fullscreen__image--2');
-      // fImage2.style.backgroundPosition = `50% ${-window.innerHeight / 2}px`;
-      // gsap.to(fImage2, {
-      //   backgroundPosition: `50% ${window.innerHeight / 2}px`,
-      //   ease: 'none',
-      //   scrollTrigger: {
-      //     trigger: '.fullscreen',
-      //     scrub: true,
-      //   },
-      // });
 
       gsap.from(
         '.fullscreen__image',
@@ -464,12 +358,8 @@ class Chatbox extends React.Component {
         '+=0'
       );
 
-      console.log(document.querySelector('.fullscreen__image--1').offsetHeight);
-
       gsap.utils.toArray('.fullscreen').forEach((section, i) => {
         section.bg = section.querySelector('.fullscreen__image');
-        console.log('section = ', section);
-
         if (i) {
           section.bg.style.backgroundPosition = `0% ${
             -window.innerHeight / 2
@@ -503,7 +393,6 @@ class Chatbox extends React.Component {
 
       gsap.utils.toArray('.small-screen').forEach((section, i) => {
         section.bg = section.querySelector('.small-screen__image');
-
         section.bg.style.backgroundPosition = `50% ${
           -window.innerHeight / 12 - 150
         }px`;
@@ -516,15 +405,6 @@ class Chatbox extends React.Component {
           },
         });
       });
-
-      // gsap.to('.small-screen__image', {
-      //   backgroundPosition: '50% 0%',
-      //   ease: 'none',
-      //   scrollTrigger: {
-      //     trigger: '.small-screen__image--1',
-      //     scrub: true,
-      //   },
-      // });
     }, 0);
   };
 }

@@ -64,7 +64,7 @@ class Footer extends React.Component {
       // }
       let tlFooter = gsap.timeline({
         scrollTrigger: {
-          trigger: '.footer__container',
+          trigger: '.footer',
           scrub: true,
         },
       });

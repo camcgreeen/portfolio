@@ -21,7 +21,7 @@
       color: $color-accent-1;
     }
   }
-  h1 {
+  &__main-title {
     // margin-bottom: calc(#{$nav-height} + 150px);
     margin-bottom: 200px;
     // visibility: hidden;
@@ -97,6 +97,7 @@
 .fullscreen {
   width: 100vw;
   height: 100vh;
+  min-height: 750px;
   object-fit: cover;
   overflow: hidden;
   // min-height: 750px;
