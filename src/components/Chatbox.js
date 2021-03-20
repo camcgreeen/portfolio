@@ -361,11 +361,11 @@ class Chatbox extends React.Component {
       gsap.utils.toArray('.fullscreen').forEach((section, i) => {
         section.bg = section.querySelector('.fullscreen__image');
         if (i) {
-          section.bg.style.backgroundPosition = `0% ${
+          section.bg.style.backgroundPosition = `50% ${
             -window.innerHeight / 2
           }px`;
           gsap.to(section.bg, {
-            backgroundPosition: `0% ${window.innerHeight / 2}px`,
+            backgroundPosition: `50% ${window.innerHeight / 2}px`,
             ease: 'none',
             scrollTrigger: {
               trigger: section,
