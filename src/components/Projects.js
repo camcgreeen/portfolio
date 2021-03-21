@@ -11,7 +11,6 @@ class Tools extends React.Component {
     return (
       <div className='projects'>
         <div className='wrapper'>
-          {/* <div className='projects__screen'> */}
           <h2 className='projects__h2'>
             Things I've <br /> worked on.
           </h2>
@@ -29,7 +28,6 @@ class Tools extends React.Component {
             </div>
             <div className='projects__screen__container__links projects-animate'>
               <Link to='/projects/chatbox'>
-                {/* <button className='btn'>View project.</button> */}
                 <div class='btn'>
                   <p class='btn__text'>View project.</p>
                   <div class='btn__bg-2'></div>
@@ -57,27 +55,14 @@ class Tools extends React.Component {
               </a>
             </div>
           </div>
-          {/* </div> */}
           <div className='projects__screen' style={{ marginTop: 100 }}>
             <div className='projects__screen__hero projects-animate'>
               <Link to='/projects/jobstasy'>
                 <div className='projects__screen__hero__box projects__screen__hero__box--2'></div>
               </Link>
             </div>
-            {/* <div
-              className='projects__screen__container'
-              style={{ float: 'right' }}
-            >
-              <div className='projects__screen__container__links'></div>
-            </div> */}
-            <div
-              className='projects__screen__container'
-              // style={{ float: 'right' }}
-            >
-              <div
-                className='projects__screen__container__details'
-                // style={{ marginRight: 80 }}
-              >
+            <div className='projects__screen__container'>
+              <div className='projects__screen__container__details'>
                 <h4 className='projects-animate'>Jobstasy</h4>
                 <h3 className='projects-animate'>
                   Remote job <br /> <span>search platform.</span>
@@ -85,7 +70,6 @@ class Tools extends React.Component {
               </div>
               <div className='projects__screen__container__links projects-animate'>
                 <Link to='/projects/jobstasy'>
-                  {/* <button className='btn'>View project.</button> */}
                   <div class='btn'>
                     <p class='btn__text'>View project.</p>
                     <div class='btn__bg-2'></div>

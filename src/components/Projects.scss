@@ -2,36 +2,17 @@
 
 .projects {
   width: 100%;
-  // padding: 100px 0;
   margin-top: 200px;
   margin-bottom: 400px;
-  &__h2 {
-    // margin-bottom: 50px;
-  }
   &__screen {
-    // background: orange;
-    // height: 100vh;
-    // margin-bottom: 200px;
-    // position: relative;
     &__hero {
       margin-top: 50px;
       width: 100%;
-      // height: 400px;
-      // height: 42.5vh;
-      // max-height: 300px;
-      // min-height: 150px;
-      // object-fit: cover;
       height: 30vw;
       max-height: 400px;
       min-height: 125px;
       overflow: hidden;
       background: grey;
-      // min-height: 750px;
-      // object-fit: cover;
-      // background-image: url('../images/chatbox-hero.jpg');
-      // background-size: cover;
-      // background-position: center;
-      // background-size: 100%;
       position: relative;
       display: flex;
       align-items: center;
@@ -42,30 +23,15 @@
         }
       }
       &__box {
-        // width: 100%;
-        // height: 400px;
-        // object-fit: cover;
-        // background-image: url('../images/chatbox-hero.jpg');
-        // background-size: cover;
-        // background-position: center;
-        // cursor: pointer;
-        // background-size: 100%;
-        // background-repeat: no-repeat;
-        // transition: all 0.2s ease-in-out;
-
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 150%;
         background-size: cover;
-
         background-position: 50% 100%;
         background-repeat: no-repeat;
         transition: transform 0.2s ease-in-out;
-        &:hover {
-          // background-size: 110%;
-        }
         &--1 {
           background-image: url('../images/chatbox-hero.jpg');
         }
@@ -75,19 +41,13 @@
       }
     }
     &__container {
-      // position: absolute;
-      // right: 0;
-      // background: yellow;
-      // margin-top: 80px;
       margin-top: 50px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      // float: right;
       &__details {
         display: flex;
         flex-direction: column;
-        // margin-right: 80px;
         h3,
         h4 {
           margin-bottom: 25px;
@@ -100,8 +60,6 @@
       &__links {
         display: flex;
         flex-direction: row;
-        // align-items: center;
-        // background: pink;
         svg {
           path,
           circle {
@@ -109,7 +67,6 @@
           }
         }
         &__github {
-          // width: 60px;
           width: 46px;
           height: 46px;
           margin-left: 50px;
