@@ -431,6 +431,7 @@ class Chatbox extends React.Component {
           section.bg.style.backgroundPosition = `50% ${
             -window.innerHeight / 12 - 150
           }px`;
+          section.bg.style.height = '150%';
           gsap.to(section.bg, {
             backgroundPosition: `50% ${window.innerHeight / 12}px`,
             ease: 'none',
