@@ -6,16 +6,9 @@ import Profile from '../images/profile.png';
 import '../main.scss';
 import './About.scss';
 
-// gsap.registerPlugin(ScrollTrigger);
-
 class About extends React.Component {
   constructor(props) {
     super(props);
-    // this.refAbout = React.createRef();
-    // this.cbRef = null;
-    // this.setCbRef = (element) => {
-    //   this.cbRef = element;
-    // }
   }
   render() {
     return (
@@ -28,24 +21,10 @@ class About extends React.Component {
                 Hello! I'm Cam, a front-end developer based in England. I love
                 to make things on the internet, like applications and websites.
                 😀
-                {/* I love
-                to make things on the internet, like applications and websites.
-                I always aim to build things that provide{' '}
-                  fast and dynamic
-                experiences. 😀 */}{' '}
-                {/* I enjoy creating things that live on the internet, whether that
-                be websites, applications, or anything in between. */}
                 <br />
                 <br />I aim to build things that are fast, responsive and
-                pixel-perfect.
-                {/* Something interesting and cool words that keep the page structure. */}{' '}
-                I'm quietly confident, creatively curious, and always seeking to
-                improve.
-                {/* <br />
-                <br />
-                Shortly after graduating from Northeastern University, I joined
-                the engineering team at Upstatement where I work on a wide
-                variety of interesting and meaningful projects on a daily basis. */}
+                pixel-perfect. I'm quietly confident, creatively curious, and
+                always seeking to improve.
                 <br />
                 <br />
                 Here are some of the tools I like to use:
@@ -54,7 +33,6 @@ class About extends React.Component {
               <ul className='about__content__me__ul'>
                 <li>React</li>
                 <li>JavaScript (ES6+)</li>
-                {/* <li>Node</li> */}
                 <li>HTML</li>
                 <li>(S)CSS</li>
                 <li>Git</li>
@@ -113,15 +91,6 @@ class About extends React.Component {
           },
           '-=0.75'
         );
-      // .from(
-      //   '.about__content__me',
-      //   {
-      //     duration: 1.8,
-      //     opacity: 0,
-      //     ease: 'power4.out',
-      //   },
-      //   '-=1'
-      // );
     }, 100);
   };
 }
