@@ -13,7 +13,6 @@ class Landing extends React.Component {
           <div className='landing__bg'></div>
           <div className='landing__content'>
             <h1 className='landing__content__title'>
-              {/* Creative developer <br /> & designer. */}
               Creative developer <br /> for the web.
             </h1>
             <h4 className='landing__content__description'>
@@ -35,28 +34,7 @@ class Landing extends React.Component {
       </div>
     );
   }
-  // scroll = () => {
-  //   if (this.props.aboutRef) {
-  //     // this.props.aboutRef.scrollIntoView({
-  //     //   behavior: 'smooth',
-  //     //   block: 'start',
-  //     //   inline: 'nearest',
-  //     // });
-  //     const container = document.getElementById('routing-container');
-  //     console.log(container);
-  //     window.scrollTo({
-  //       top: 1000,
-  //       behavior: 'smooth',
-  //     });
-  //   }
-  // };
-  // executeScroll = () => this.props.aboutRef.current.scrollIntoView();
   executeScroll = () => {
-    // const about = document.querySelector('.about');
-    // about.scrollIntoView({
-    //   behavior: 'smooth',
-    // });
-
     const element = document.querySelector('.about');
     const offset = 0;
     const bodyRect = document.body.getBoundingClientRect().top;
@@ -70,19 +48,10 @@ class Landing extends React.Component {
     });
   };
   componentDidMount = () => {
-    // console.log('about ref = ', this.props.aboutRef);
-
     if (typeof window !== 'undefined') {
       gsap.registerPlugin(ScrollTrigger);
     }
-    let tl = gsap.timeline({
-      // scrollTrigger: {
-      // trigger: '.landing',
-      // start: 'center top',
-      // end: 'bottom center',
-      // toggleActions: 'play pause resume reset',
-      // },
-    });
+    let tl = gsap.timeline();
 
     new SplitText('.landing__content__title', {
       type: 'lines',
@@ -108,9 +77,6 @@ class Landing extends React.Component {
         y: 140,
         opacity: 0,
         ease: 'power4.out',
-        // delay: 1,
-        // skewY: 2,
-        // skewX: 1,
         stagger: {
           amount: 0.2,
         },
@@ -128,118 +94,33 @@ class Landing extends React.Component {
         },
         '-=1.5'
       );
-    // fix
-    // if (window.scrollY < 1000) {
-    //   setTimeout(() => this.jellyLogo(60, '700px'), 500);
-    // }
-    // this.jellyLogo(60, '800px');
     setTimeout(() => this.jellyLogo(80, '700px'), 500);
   };
   jellyLogo = (constrain, perspective) => {
     const circle1 = document.querySelector('.landing__logo__circle1');
     const circle2 = document.querySelector('.landing__logo__circle2');
     const rectangle = document.querySelector('.landing__logo__rectangle');
-    // const landingHeight = document.querySelector('.landing').offsetHeight;
     const offsetTop = document.querySelector('.about__h2').offsetTop;
-    // console.log(offsetTop);
-    // console.log('landingHeight = ', landingHeight);
 
     if (circle1 && circle2 && rectangle) {
-      // const circle1Bounds = circle1.getBoundingClientRect();
-      // const circle2Bounds = circle2.getBoundingClientRect();
-      // const rectangleBounds = rectangle.getBoundingClientRect();
-      // document.onresize = (e) => {
-      //   // (landingHeight = document.querySelector('.landing').offsetHeight);
-
-      // }
       let circle1Bounds = circle1.getBoundingClientRect();
       let circle2Bounds = circle2.getBoundingClientRect();
       let rectangleBounds = rectangle.getBoundingClientRect();
-
-      const isSafari = window.safari !== undefined;
-      // isSafari ? console.log('Safari, yeah!') : console.log('not Safari!');
-
       let resizeTimer;
+      const isSafari = window.safari !== undefined;
 
       window.onresize = (e) => {
-        //DEBOUNCE THIS
-
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(() => {
-          console.log('resize');
           circle1Bounds = circle1.getBoundingClientRect();
           circle2Bounds = circle2.getBoundingClientRect();
           rectangleBounds = rectangle.getBoundingClientRect();
         }, 250);
-        // circle1Bounds = circle1.getBoundingClientRect();
-        // circle2Bounds = circle2.getBoundingClientRect();
-        // rectangleBounds = rectangle.getBoundingClientRect();
-
-        // console.log('resize');
-
-        // console.log('circle1Bounds = ', circle1Bounds);
-        // console.log('circle2Bounds = ', circle2Bounds);
-        // console.log('rectangle = ', rectangle);
       };
 
       document.onmousemove = (e) => {
-        // console.log('circle1Bounds = ', circle1Bounds);
-        // console.log('circle2Bounds = ', circle2Bounds);
-        // console.log('rectangle = ', rectangle);
-        // if (window.scrollY < 1000) {
         if (e.pageY < offsetTop && !isSafari) {
-          // console.log('making jelly');
           if (circle1 && circle2 && rectangle) {
-            // let rotateCircle1X =
-            //   -(e.clientY - circle1Bounds.y - circle1Bounds.height / 2) /
-            //   constrain;
-            // let rotateCircle1Y =
-            //   (e.clientX - circle1Bounds.x - circle1Bounds.width / 2) /
-            //   constrain;
-            // let rotateCircle2X =
-            //   -(e.clientY - circle2Bounds.y - circle2Bounds.height / 2) /
-            //   (constrain * 1.5);
-            // let rotateCircle2Y =
-            //   (e.clientX - circle2Bounds.x - circle2Bounds.width / 2) /
-            //   (constrain * 1.5);
-            // let rotateRectangleX =
-            //   -(e.clientY - rectangleBounds.y - rectangleBounds.height / 2) /
-            //   (constrain * 2);
-            // let rotateRectangleY =
-            //   (e.clientX - rectangleBounds.x - rectangleBounds.width / 2) /
-            //   (constrain * 2);
-
-            // let rotateCircle1X =
-            // -(
-            //   e.pageY -
-            //   (circle1Bounds.top + window.scrollY) -
-            //   circle1Bounds.height / 2
-            // ) / constrain;
-            // let rotateCircle1Y =
-            //   (e.pageX -
-            //     (circle1Bounds.left + window.scrollX) -
-            //     circle1Bounds.width / 2) /
-            //   constrain;
-            // let rotateCircle1Y = 0;
-
-            // let rotateCircle1X =
-            //   -(e.pageY - (circle1Bounds.y + window.scrollY) - circle1Bounds.height / 2) /
-            //   constrain;
-            // let rotateCircle1Y =
-            //   (e.pageX - (circle1Bounds.x + window.scrollX) - circle1Bounds.width / 2) / constrain;
-            // let rotateCircle2X =
-            //   -(e.pageY - circle2Bounds.y - circle2Bounds.height / 2) /
-            //   (constrain * 1.5);
-            // let rotateCircle2Y =
-            //   (e.pageX - circle2Bounds.x - circle2Bounds.width / 2) /
-            //   (constrain * 1.5);
-            // let rotateRectangleX =
-            //   -(e.pageY - rectangleBounds.y - rectangleBounds.height / 2) /
-            //   (constrain * 2);
-            // let rotateRectangleY =
-            //   (e.pageX - rectangleBounds.x - rectangleBounds.width / 2) /
-            //   (constrain * 2);
-
             let rotateCircle1X =
               -(e.pageY - circle1.offsetTop - circle1.offsetHeight) / constrain;
             let rotateCircle1Y =
