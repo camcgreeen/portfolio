@@ -36,11 +36,11 @@ class About extends React.Component {
                 {/* I enjoy creating things that live on the internet, whether that
                 be websites, applications, or anything in between. */}
                 <br />
-                <br />I always aim to build things that are fast, responsive and
+                <br />I aim to build things that are fast, responsive and
                 pixel-perfect.
                 {/* Something interesting and cool words that keep the page structure. */}{' '}
-                I'm quietly confident, creatively curious, and consistently
-                seeking to improve.
+                I'm quietly confident, creatively curious, and always seeking to
+                improve.
                 {/* <br />
                 <br />
                 Shortly after graduating from Northeastern University, I joined

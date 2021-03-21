@@ -37,6 +37,10 @@
       color: $color-secondary;
       // margin-top: 50px;
       margin-bottom: 25px;
+      // font-weight: 400;
+    }
+    &__info {
+      font-weight: 400;
     }
     &__buttons {
       display: flex;
@@ -162,7 +166,8 @@
     background-size: cover;
     // background-size: 100% 200%;
     // background-position: center;
-    background-position: 50% 100%;
+    background-position: 50% 50%;
+    // background-position: cover;
     background-repeat: no-repeat;
     &--chatbox--1 {
       background-image: url('../images/chatbox-supplementary-1.jpg');
@@ -206,11 +211,11 @@
     }
   }
   .small-screen {
-    width: 75%;
+    width: 100%;
   }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1024px) {
   .project-detail {
     &__details {
       max-width: 100%;
@@ -229,6 +234,10 @@
   }
   .small-screen {
     width: 100%;
+    &__image {
+      height: 100%;
+      background-position: left bottom;
+    }
   }
 }
 
@@ -242,5 +251,33 @@
       //   margin-top: 25px;
       // }
     }
+  }
+  .fullscreen {
+    // width: 100vw;
+    width: 100vw;
+    // height: 250px;
+    // min-height: 250px;
+    // height: 10vh;
+    // min-height: 10vh;
+    &__image {
+      width: 100%;
+      height: 100%;
+      background-position: left top;
+      // background-size: 50% 50%;
+      background-size: cover;
+    }
+  }
+  .code {
+    background-position: center top;
+  }
+  .small-screen {
+    &__image {
+      height: 100%;
+      background-position: center bottom;
+    }
+  }
+  .btn--project {
+    width: 80px;
+    // width: 100%;
   }
 }

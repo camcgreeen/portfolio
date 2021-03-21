@@ -12,6 +12,9 @@ import '../main.scss';
 class Jobstasy extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      mobileDevice: false,
+    };
   }
   render() {
     return (
@@ -32,7 +35,7 @@ class Jobstasy extends React.Component {
             <h4 className='project-detail__details__title animate-detail'>
               Tools used
             </h4>
-            <h4 className='animate-detail'>
+            <h4 className='project-detail__details__info animate-detail'>
               React, React Router, Firebase, GitHub Jobs API, Git & Figma
             </h4>
             <h4
@@ -41,7 +44,7 @@ class Jobstasy extends React.Component {
             >
               Summary
             </h4>
-            <h4 className='animate-detail'>
+            <h4 className='project-detail__details__info animate-detail'>
               Jobstasy is a remote job search platform that can help you find
               your next job in software. The application allows you to like jobs
               to save them for later and to use several custom filters to dig
@@ -91,38 +94,66 @@ class Jobstasy extends React.Component {
                 my needs were simple and it made authentication straightforward.
                 <br />
                 <br />
-                Some more text to hold structure. Some more text to hold
-                structure. Some more text to hold structure.
+                The project needed to list the jobs from the GitHub Jobs API,
+                using a reusable card component system, and to be easily
+                navigated through using several different filters.
               </p>
             </div>
           </div>
         </div>
         <div className='fullscreen'>
-          <div className='fullscreen__image fullscreen__image--2 fullscreen__image--jobstasy--2'></div>
+          <div className='fullscreen__image fullscreen__image--2 fullscreen__image--jobstasy--2 code'></div>
         </div>
         <div className='wrapper'>
           <div className='project-detail__build'>
             <h2 className='project-detail__h2 how-built'>How it works.</h2>
             <div className='project-detail__build__detail animate-build'>
               <p>
-                The application leverages the power of the Firebase onSnapshot
-                method, in order to get real-time updates when the database is
-                written to. This means that when a message is sent, it is added
-                to the messages array within the chat object for those two
-                users.
+                The{' '}
+                <a
+                  href='https://github.com/camcgreen/jobstasy/blob/main/src/components/Jobs.js'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Jobs.js
+                </a>{' '}
+                component holds the central jobs state that is pulled from
+                GitHub Jobs API. This is then passed down to children components
+                on a need-to-know basis.
                 <br />
                 <br />
-                The onSnapshot method then allows us to detect that there has
-                been a change to the messages array, which we use to update the
-                local state in React of the messages array. This state change
-                cause a re-render of the component which then displays the
-                updated chat with almost no delay.
+                This state is then mapped through and rendered in the{' '}
+                <a
+                  href='https://github.com/camcgreen/jobstasy/blob/main/src/components/JobList.js'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  JobList.js
+                </a>{' '}
+                component. Clicking on a job passes that specific job array data
+                from the overall jobs object state as props to the{' '}
+                <a
+                  href='https://github.com/camcgreen/jobstasy/blob/main/src/components/JobDetail.js'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  JobDetail.js
+                </a>{' '}
+                component. This component then renders all the relevant detail
+                (like the job title, company name, job description, etc).
                 <br />
                 <br />
-                Authentication is handled by Firebase through the means of some
-                convenient methods. Firebase provides some server-side
-                validation so only some application-specific client-side
-                validation is needed.
+                Liking a job adds it to the LikedJobs arrays of the logged in
+                user in the Firestore, which is then fed into the jobs state to
+                render the liked jobs list instead of the searched jobs on the{' '}
+                <a
+                  href='https://github.com/camcgreen/jobstasy/blob/main/src/components/Likes.js'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Likes.js
+                </a>{' '}
+                component.
               </p>
             </div>
           </div>
@@ -135,27 +166,32 @@ class Jobstasy extends React.Component {
             </h2>
             <div className='project-detail__lessons__detail animate-lessons'>
               <p>
-                For future projects of this size, I would set up for test-driven
-                development from the start. The project grew in complexity,
-                beyond the original idea, and manual testing became unreliable.
+                In the future, for projects like this, I would set up a few
+                endpoints on a simple back-end that I could make requests to in
+                order to fetch the relevant data from the API, rather than
+                trying to do it all from the front-end.
                 <br />
-                <br />I would also consider using the React Context API to
-                manage the chat state, as there were several different
-                components that needed to read and write to this state, and it
-                got quite cumbersome managing state with lots of props and
-                callbacks.
+                <br />
+                This would make the code more manageable as it would be
+                abstracted, and it would sidestep any pesky CORS restrictions. I
+                ended up having to use a third-party proxy to get around CORS
+                errors, which introduces an unnecessary dependency and makes the
+                API responses slower.
+                <br />
+                <br />
+                Overall, this was a fun project that I learned a lot from.
               </p>
             </div>
           </div>
           <div className='project-detail__buttons'>
             <Link to='/'>
-              <div class='btn'>
+              <div class='btn btn--project'>
                 <p class='btn__text'>Go home.</p>
                 <div class='btn__bg-2'></div>
               </div>
             </Link>
             <Link to='/projects/chatbox'>
-              <div class='btn'>
+              <div class='btn btn--project'>
                 <p class='btn__text'>Next project.</p>
                 <div class='btn__bg-2'></div>
               </div>
@@ -167,10 +203,21 @@ class Jobstasy extends React.Component {
       </div>
     );
   }
-  componentDidMount = () => {
+  componentDidMount = async () => {
     if (typeof window !== 'undefined') {
       gsap.registerPlugin(ScrollTrigger);
     }
+
+    let isMobile = false;
+    if (
+      typeof window.orientation !== 'undefined' ||
+      navigator.userAgent.indexOf('IEMobile') !== -1
+    ) {
+      isMobile = true;
+    }
+
+    await this.setState({ mobileDevice: isMobile });
+
     setTimeout(() => {
       let initChatbox = gsap.timeline({
         default: { opacity: 0, ease: 'back' },
@@ -348,64 +395,67 @@ class Jobstasy extends React.Component {
           '-=1.4'
         );
 
-      gsap.from(
-        '.fullscreen__image',
-        {
-          opacity: 0,
-          scale: 1.05,
-          ease: 'power4.out',
-          duration: 1.8,
-        },
-        '+=0'
-      );
-
-      gsap.utils.toArray('.fullscreen').forEach((section, i) => {
-        section.bg = section.querySelector('.fullscreen__image');
-        if (i) {
-          section.bg.style.backgroundPosition = `50% ${
-            -window.innerHeight / 2
-          }px`;
-          gsap.to(section.bg, {
-            backgroundPosition: `50% ${window.innerHeight / 2}px`,
-            ease: 'none',
-            scrollTrigger: {
-              trigger: section,
-              scrub: true,
-            },
-          });
-        } else {
-          section.bg.style.backgroundPosition = `0% ${
-            -window.innerHeight / 2
-          }px`;
-          gsap.to(section.bg, {
-            backgroundPosition: `0% ${window.innerHeight / 2}px`,
-            ease: 'none',
-            scrollTrigger: {
-              trigger: section,
-              start:
-                'top ' +
-                document.querySelector('.fullscreen__image--1').offsetHeight,
-              end: 'bottom top',
-              scrub: true,
-            },
-          });
-        }
-      });
-
-      gsap.utils.toArray('.small-screen').forEach((section, i) => {
-        section.bg = section.querySelector('.small-screen__image');
-        section.bg.style.backgroundPosition = `50% ${
-          -window.innerHeight / 12 - 150
-        }px`;
-        gsap.to(section.bg, {
-          backgroundPosition: `50% ${window.innerHeight / 12}px`,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: section,
-            scrub: true,
+      if (!this.state.mobileDevice) {
+        gsap.from(
+          '.fullscreen__image',
+          {
+            opacity: 0,
+            scale: 1.05,
+            ease: 'power4.out',
+            duration: 1.8,
           },
+          '+=0'
+        );
+
+        gsap.utils.toArray('.fullscreen').forEach((section, i) => {
+          section.bg = section.querySelector('.fullscreen__image');
+          if (i) {
+            section.bg.style.backgroundPosition = `50% ${
+              -window.innerHeight / 2
+            }px`;
+            gsap.to(section.bg, {
+              backgroundPosition: `50% ${window.innerHeight / 2}px`,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: section,
+                scrub: true,
+              },
+            });
+          } else {
+            section.bg.style.backgroundPosition = `0% ${
+              -window.innerHeight / 2
+            }px`;
+            gsap.to(section.bg, {
+              backgroundPosition: `0% ${window.innerHeight / 2}px`,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: section,
+                start:
+                  'top ' +
+                  document.querySelector('.fullscreen__image--1').offsetHeight,
+                end: 'bottom top',
+                scrub: true,
+              },
+            });
+          }
         });
-      });
+
+        gsap.utils.toArray('.small-screen').forEach((section, i) => {
+          section.bg = section.querySelector('.small-screen__image');
+          section.bg.style.backgroundPosition = `50% ${
+            -window.innerHeight / 12 - 150
+          }px`;
+          section.bg.style.height = '150%';
+          gsap.to(section.bg, {
+            backgroundPosition: `50% ${window.innerHeight / 12}px`,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: section,
+              scrub: true,
+            },
+          });
+        });
+      }
     }, 0);
   };
 }
