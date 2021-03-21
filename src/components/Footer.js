@@ -6,16 +6,6 @@ import './Footer.scss';
 
 class Footer extends React.Component {
   render() {
-    {
-      /*
-        TO DO:
-          Add download link for CV
-          Make links hoverable
-          Add LinkedIn page
-          Swap out 100vh
-          Block level elements are clickable throughout the whole block which is annoying
-      */
-    }
     return (
       <div className='footer'>
         <div className='wrapper'>
@@ -28,9 +18,6 @@ class Footer extends React.Component {
                 </h1>
               </a>
             </div>
-            {
-              // ADD A TAGS HERE AND CV DOWNLOAD LINK
-            }
             <ul className='footer__container__links'>
               <a
                 href='https://www.linkedin.com'
@@ -39,9 +26,6 @@ class Footer extends React.Component {
               >
                 <li>LinkedIn</li>
               </a>
-              {
-                // add download link for CV
-              }
               <li>CV</li>
             </ul>
             <a href='mailto:hello@camgreen.works' style={{ display: 'inline' }}>
@@ -58,10 +42,10 @@ class Footer extends React.Component {
     );
   }
   componentDidMount = () => {
+    if (typeof window !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+    }
     setTimeout(() => {
-      // if (typeof window !== 'undefined') {
-      //   gsap.registerPlugin(ScrollTrigger);
-      // }
       let tlFooter = gsap.timeline({
         scrollTrigger: {
           trigger: '.footer',

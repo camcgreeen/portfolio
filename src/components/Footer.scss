@@ -6,7 +6,6 @@
   background-color: $color-primary;
   color: $color-bg;
   overflow: hidden;
-  // align-items: center;
 
   a {
     color: white;
@@ -22,21 +21,16 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    // transition: transform 0.01s ease-out;
     &__contact {
       &__p {
-        // font-size: 4rem;
         color: white !important;
       }
     }
 
     &__links {
-      // margin-top: 40px;
       list-style: none;
-      // font-size: 0.75rem;
       display: flex;
       flex-direction: column;
-      // transition: color 0.2s ease-in-out;
       a {
         text-decoration: none;
         display: inline;
@@ -47,47 +41,20 @@
       }
       li {
         text-decoration: none;
-        // color: orange;
         display: inline;
         transition: color 0.2s ease-in-out;
         &:hover {
           color: darken($color-bg, 20%);
         }
-        // background: yellow !important;
       }
-      // a {
-      //   li {
-      //     text-decoration: none;
-      //     display: inline;
-      //     // background: yellow !important;
-      //   }
-      //   // text-decoration: none;
-      //   // display: 'inline';
-      //   // background: yellow !important;
-      // }
-    }
-
-    &__email {
-      // margin-top: 40px;
-      // font-weight: 300;
-      // color: white;
-      // &:visited {
-      //   color: white;
-      // }
     }
   }
 }
 
-// a {
-//   color: white;
-// }
-
 .underline {
   font-weight: 300;
-  // text-decoration: underline;
   border-bottom: 5px solid white;
   display: inline-block;
-  // padding-bottom: 10px;
 }
 
 @media only screen and (max-width: 650px) {
