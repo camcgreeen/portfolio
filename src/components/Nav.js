@@ -29,15 +29,6 @@ class Nav extends React.Component {
             />
           </svg>
         </Link>
-        {/* <div className='nav__menu' onClick={this.handleClick}>
-          <div
-            className={
-              this.state.menuOpen
-                ? 'nav__menu__hamburger open'
-                : 'nav__menu__hamburger'
-            }
-          ></div>
-        </div> */}
       </nav>
     );
   }
