@@ -1,13 +1,39 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter } from 'react-router-dom';
-// import SmoothScrollbar from 'smooth-scrollbar';
 import Home from './components/Home';
-// import ProjectDetail from './components/ProjectDetail';
 import Chatbox from './components/Chatbox';
 import Jobstasy from './components/Jobstasy';
 import ScrollToTop from './components/ScrollToTop';
 import reportWebVitals from './reportWebVitals';
+
+// var firebase = require('firebase/app');
+
+import { firebase } from '@firebase/app';
+require('firebase/firestore');
+
+// firebase.initializeApp({
+//   apiKey: 'AIzaSyDcG5oeS8TiyQ62rlNyEyRDimOYXVAnPFA',
+//   authDomain: 'portfolio-6d7e1.firebaseapp.com',
+//   projectId: 'portfolio-6d7e1',
+//   storageBucket: 'portfolio-6d7e1.appspot.com',
+//   messagingSenderId: '389882764684',
+//   appId: '1:389882764684:web:4269f70291f987d2370aa9',
+//   measurementId: 'G-6VC1ZMYG9Y',
+// });
+
+var firebaseConfig = {
+  apiKey: 'AIzaSyDcG5oeS8TiyQ62rlNyEyRDimOYXVAnPFA',
+  authDomain: 'portfolio-6d7e1.firebaseapp.com',
+  projectId: 'portfolio-6d7e1',
+  storageBucket: 'portfolio-6d7e1.appspot.com',
+  messagingSenderId: '389882764684',
+  appId: '1:389882764684:web:4269f70291f987d2370aa9',
+  measurementId: 'G-6VC1ZMYG9Y',
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+// firebase.analytics();
 
 const routing = (
   <BrowserRouter>
@@ -25,13 +51,6 @@ ReactDOM.render(
   <React.StrictMode>{routing}</React.StrictMode>,
   document.getElementById('root')
 );
-
-// const view = document.getElementById('routing-container');
-// const scrollbar = SmoothScrollbar.init(view, {
-//   renderByPixels: false,
-//   damping: 0.075,
-//   continuousScrolling: true,
-// });
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

@@ -9,7 +9,7 @@ class Landing extends React.Component {
   render() {
     return (
       <div className='wrapper'>
-        <div className='landing'>
+        <header className='landing'>
           <div className='landing__bg'></div>
           <div className='landing__content'>
             <h1 className='landing__content__title'>
@@ -19,18 +19,20 @@ class Landing extends React.Component {
               Hi! I'm Cam, a front-end developer <br /> based in sunny England.
               👋🏼
             </h4>
-            <div class='btn main' onClick={this.executeScroll}>
-              <p class='btn__text'>Learn more.</p>
-              <div class='btn__bg-1'></div>
-              <div class='btn__bg-2'></div>
-            </div>
+            <a onClick={this.executeScroll}>
+              <div class='btn main'>
+                <p class='btn__text'>Learn more.</p>
+                <div class='btn__bg-1'></div>
+                <div class='btn__bg-2'></div>
+              </div>
+            </a>
           </div>
           <div className='landing__logo'>
             <div className='landing__logo__circle1'></div>
             <div className='landing__logo__circle2'></div>
             <div className='landing__logo__rectangle'></div>
           </div>
-        </div>
+        </header>
       </div>
     );
   }

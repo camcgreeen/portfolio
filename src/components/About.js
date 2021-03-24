@@ -13,23 +13,23 @@ class About extends React.Component {
   render() {
     return (
       <div className='wrapper'>
-        <div className='about' id='about' ref={this.props.setRef}>
+        <section className='about' id='about' ref={this.props.setRef}>
           <h2 className='about__h2'>About me.</h2>
           <div className='about__content'>
             <div className='about__content__me about-animate'>
-              <p className='parallax__p'>
+              <p className='about__content__me__p'>
                 Hello! I'm Cam, a front-end developer based in England. I love
                 to make things on the internet, like applications and websites.
                 😀
-                <br />
-                <br />I aim to build things that are fast, responsive and
+              </p>
+              <p className='about__content__me__p'>
+                I aim to build things that are fast, responsive and
                 pixel-perfect. I'm quietly confident, creatively curious, and
                 always seeking to improve.
-                <br />
-                <br />
+              </p>
+              <p className='about__content__me__p'>
                 Here are some of the tools I like to use:
               </p>
-              <br />
               <ul className='about__content__me__ul'>
                 <li>React</li>
                 <li>JavaScript (ES6+)</li>
@@ -45,7 +45,7 @@ class About extends React.Component {
               alt='profile picture'
             />
           </div>
-        </div>
+        </section>
       </div>
     );
   }

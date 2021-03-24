@@ -9,7 +9,7 @@ import './Projects.scss';
 class Tools extends React.Component {
   render() {
     return (
-      <div className='projects'>
+      <section className='projects'>
         <div className='wrapper'>
           <h2 className='projects__h2'>
             Things I've <br /> worked on.
@@ -99,7 +99,7 @@ class Tools extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     );
   }
   componentDidMount = () => {

@@ -25,8 +25,10 @@ class Home extends React.Component {
           <>
             <Nav />
             <Landing aboutRef={this.childRef} />
-            <About setRef={this.setRef} />
-            <Projects />
+            <main>
+              <About setRef={this.setRef} />
+              <Projects />
+            </main>
             <Footer />
             <Bubble />
           </>

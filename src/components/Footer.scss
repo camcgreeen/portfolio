@@ -26,7 +26,15 @@
         color: white !important;
       }
     }
-
+    &__email-mobile {
+      list-style: none;
+      li {
+        margin-top: 5px;
+      }
+      &__number {
+        font-size: 0.9rem;
+      }
+    }
     &__links {
       list-style: none;
       display: flex;

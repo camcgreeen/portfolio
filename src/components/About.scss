@@ -13,6 +13,9 @@
     &__me {
       max-width: 50%;
       margin-right: 100px;
+      &__p {
+        margin-bottom: 20px;
+      }
       &__ul {
         margin-left: 1rem;
         list-style-type: square;
