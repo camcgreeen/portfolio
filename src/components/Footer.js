@@ -60,9 +60,6 @@ class Footer extends React.Component {
                   </h4>
                 </a>
               </li>
-              <li className='footer__container__email-mobile__number'>
-                (+44) 7464 753049
-              </li>
             </ul>
           </div>
         </div>
